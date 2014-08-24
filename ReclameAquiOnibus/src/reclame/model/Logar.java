@@ -16,9 +16,9 @@ public class Logar implements Acao{
 		Usuario usuario = fachada.cadastroUsuario().logar(login, senha);
 		if(usuario != null){			
 			request.getSession().setAttribute("usuario", usuario);
-			return "/Menu.jsp";
+			return "/home.jsp";
 		}else{
-			return "/Login.jsp";
+			return "/Index.jsp";
 		}
 	}
 }
