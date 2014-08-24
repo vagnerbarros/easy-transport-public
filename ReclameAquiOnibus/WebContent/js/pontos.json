@@ -1,0 +1,26 @@
+[
+	{
+		"Id": 1,
+        "Latitude": -8.278772,
+        "Longitude": -35.972921,
+		"Descricao": "Estadio Luiz Lacerda"
+    },
+    {
+		"Id": 2,
+        "Latitude": -8.2896711,
+        "Longitude": -36.0095048,
+		"Descricao": "Alto do Moura"
+    },
+    {
+		"Id": 3,
+        "Latitude": -8.298936,
+        "Longitude": -35.974305,
+		"Descricao": "FAFICA"
+    },
+    {
+    	"Id": 4,
+        "Latitude": -8.287287,
+        "Longitude": -35.973473,
+		"Descricao": "SESC"
+    }
+]
