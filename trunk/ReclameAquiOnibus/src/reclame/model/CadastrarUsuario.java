@@ -34,10 +34,10 @@ public class CadastrarUsuario implements Acao{
 		try{
 		
 			Fachada.getInstance().cadastroUsuario().cadastrar(u);
-			pagina = "CadastroOk.jsp?msg=sucesso";
+			pagina = "Index.jsp?msg=sucesso";
 		}
 		catch(Exception e){
-			pagina = "Cadastro.jsp?msg=Erro no cadastro.";
+			pagina = "cadastro.jsp?msg=Erro no cadastro.";
 		}
 		return pagina;
 	}

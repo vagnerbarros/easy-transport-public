@@ -18,13 +18,13 @@ public class Usuario {
 	@Column(name = "nome", length = 200, nullable = false)
 	private String nome;
 	
-	@Column(name = "cpf", length = 10, nullable = false)
+	@Column(name = "cpf", length = 11, nullable = false)
 	private String cpf;
 	
-	@Column(name = "sexo", length = 10, nullable = false)
+	@Column(name = "sexo", length = 1, nullable = false)
 	private String sexo;
 	
-	@Column(name = "idade", length = 200, nullable = false)
+	@Column(name = "idade", length = 3, nullable = false)
 	private String idade;
 	
 	@Column(name = "endereco", length = 200, nullable = false)
@@ -76,7 +76,7 @@ public class Usuario {
 	public String getCpf() {
 			return cpf;
 	}
-		public void setCpf(String cpf) {
+	public void setCpf(String cpf) {
 			this.cpf = cpf;
 	}
 	public String getSenha() {

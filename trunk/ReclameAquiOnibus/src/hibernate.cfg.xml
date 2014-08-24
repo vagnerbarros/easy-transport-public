@@ -22,7 +22,7 @@
     
     <mapping class="reclame.entidades.Usuario"/>
     <mapping class="reclame.entidades.Empresa"/>
-    <mapping class="reclame.entidades.Linha"/>
+    <mapping class="reclame.entidades.Rota"/>
     <mapping class="reclame.entidades.Onibus"/>
     <mapping class="reclame.entidades.Reclamacao"/>
     
