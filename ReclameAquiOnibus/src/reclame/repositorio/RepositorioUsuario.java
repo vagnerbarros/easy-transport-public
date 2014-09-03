@@ -3,6 +3,7 @@ package reclame.repositorio;
 import java.util.List;
 
 import reclame.dao.Dao;
+import reclame.dominio.TipoUsuario;
 import reclame.entidades.Usuario;
 import reclame.util.Constants;
 
@@ -27,6 +28,10 @@ public class RepositorioUsuario {
 	
 	public List<Usuario> listar(){
 		return (List<Usuario>) dao.criarQuery("FROM usuario WHERE status <> '" + Constants.INATIVO + "'");
+	}
+	
+	public List<Usuario> listarRepresentantes(){
+		return (List<Usuario>) dao.criarQuery("FROM usuario WHERE tipo = '" + TipoUsuario.REPRESENTANTE + "' AND status <> '" + Constants.INATIVO + "'");
 	}
 	
 	public Usuario buscarPorId(long id){

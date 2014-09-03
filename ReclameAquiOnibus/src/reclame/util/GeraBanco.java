@@ -15,11 +15,11 @@ public class GeraBanco {
            
             
             JOptionPane.showMessageDialog(null, "O Banco de Dados foi gerado com sucesso!",
-            		"Fafica .:. Alerta",JOptionPane.INFORMATION_MESSAGE);
+            		"Easy Trans .:. Alerta",JOptionPane.INFORMATION_MESSAGE);
 		} catch (Exception e) {
 			System.out.println(e);
             JOptionPane.showMessageDialog(null, "Erro ao Gerar a Base de Dados!",
-            	"Fafica .:. Alerta",JOptionPane.ERROR_MESSAGE);
+            	"Easy Trans .:. Alerta",JOptionPane.ERROR_MESSAGE);
 		}
     }
 }
