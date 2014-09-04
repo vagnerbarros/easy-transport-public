@@ -12,23 +12,17 @@ public class Empresa {
 	@GeneratedValue
 	private int id;
 	
-	@Column(name = "cnpj", length = 20, nullable = false)
+	@Column(name = "cnpj", length = 14, nullable = false)
 	private String cnpj;
 	
-	@Column(name = "cidade", length = 100, nullable = false)
-	private String cidade;
+	@Column(name = "razao", length = 200, nullable = false)
+	private String razao;
 	
-	@Column(name = "nome_empresa", length = 100, nullable = false)
-	private String nome_empresa;
+	@Column(name = "email", length = 50, nullable = false)
+	private String email;
 	
-	@Column(name = "endereco", length = 200, nullable = false)
-	private String endereco;
-	
-	@Column(name = "telefone", length = 20, nullable = false)
-	private String telefone;
-	
-	@Column(name = "estado", length = 2, nullable = false)
-	private String estado;
+	@Column(name = "senha", length = 50, nullable = false)
+	private String senha;
 	
 	@Column(name = "status", length = 10, nullable = false)
 	private String status;
@@ -45,35 +39,23 @@ public class Empresa {
 	public void setCnpj(String cnpj) {
 		this.cnpj = cnpj;
 	}
-	public String getCidade() {
-		return cidade;
+	public String getRazao() {
+		return razao;
 	}
-	public void setCidade(String cidade) {
-		this.cidade = cidade;
+	public void setRazao(String razao) {
+		this.razao = razao;
 	}
-	public String getNome_empresa() {
-		return nome_empresa;
+	public String getEmail() {
+		return email;
 	}
-	public void setNome_empresa(String nome_empresa) {
-		this.nome_empresa = nome_empresa;
+	public void setEmail(String email) {
+		this.email = email;
 	}
-	public String getEndereco() {
-		return endereco;
+	public String getSenha() {
+		return senha;
 	}
-	public void setEndereco(String endereco) {
-		this.endereco = endereco;
-	}
-	public String getTelefone() {
-		return telefone;
-	}
-	public void setTelefone(String telefone) {
-		this.telefone = telefone;
-	}
-	public String getEstado() {
-		return estado;
-	}
-	public void setEstado(String estado) {
-		this.estado = estado;
+	public void setSenha(String senha) {
+		this.senha = senha;
 	}
 	public String getStatus() {
 		return status;

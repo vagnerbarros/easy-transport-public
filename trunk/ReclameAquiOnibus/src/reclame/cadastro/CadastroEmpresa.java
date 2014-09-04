@@ -3,7 +3,6 @@ package reclame.cadastro;
 import java.util.List;
 
 import reclame.entidades.Empresa;
-import reclame.entidades.Usuario;
 import reclame.repositorio.RepositorioEmpresa;
 import reclame.util.Criptografia;
 
@@ -16,7 +15,13 @@ public class CadastroEmpresa {
 	}
 	
 	public void cadastrar(Empresa nova){
+		String senha = Criptografia.encryptPassword(nova.getSenha());
+		nova.setSenha(senha);
 		rep.inserir(nova);
+	}
+	
+	public Empresa buscarId(int id){
+		return rep.buscarPorId(id);
 	}
 	
 	public void atualizar(Empresa atual){

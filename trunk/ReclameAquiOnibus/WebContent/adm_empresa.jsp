@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<%@page import="reclame.fachada.Fachada"%>
+<%@page import="reclame.entidades.Empresa"%>
+<%@page import="java.util.List"%>
 <html>
   
   <head>
@@ -57,46 +60,48 @@
             <a href="#tab1" data-toggle="tab"><span class="glyphicon glyphicon-plus"></span>  Cadastrar</a>
           </li>
           <li>
-            <a href="#tab2" data-toggle="tab"><span class="glyphicon glyphicon-saved"></span>   Editar</a>
-          </li>
-          <li>
             <a href="#tab3" data-toggle="tab"><span class="glyphicon glyphicon-list"></span>   Listar</a>
-          </li>
-          <li>
-            <a href="#tab4" data-toggle="tab"><span class="glyphicon glyphicon-remove"></span>   Excluir</a>
           </li>
         </ul>
         <div class="tab-content">
           <div class="tab-pane active" id="tab1">
             <p draggable="true"></p>
             <hr>
-            <form class="form-horizontal">
+            <form action="controlador" method="POST" class="form-horizontal">
+            	<input type="hidden" name="acao" value="cadastrar_empresa" />
               <fieldset>
                 <div class="form-group">
-                  <label class="col-md-4 control-label" for="nome">Nome da empresa:</label>
+                  <label class="col-md-4 control-label" for="nome">Raz�o Social:</label>
                   <div class="col-md-6">
-                    <input id="nome" name="nome" type="text" placeholder="Digite o nome da empresa"
+                    <input id="nome" name="razao" type="text" placeholder="Digite o nome da empresa"
                     class="form-control input-md" required="">
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="col-md-4 control-label" for="senha">CNPJ:</label>
                   <div class="col-md-6">
-                    <input id="senha" name="senha" type="text" placeholder="Digite o CNPJ da empresa"
+                    <input id="senha" name="cnpj" type="text" placeholder="Digite o CNPJ da empresa"
                     class="form-control input-md" required="">
                   </div>
                 </div>
-                <div class="form-group has-success">
+                <div class="form-group">
                   <label class="col-md-4 control-label" for="repetirsenha">E-mail:</label>
                   <div class="col-md-6">
-                    <input id="repetirsenha" name="repetirsenha" type="email" placeholder="Digite o e-mail da empresa"
+                    <input id="repetirsenha" name="email" type="email" placeholder="Digite o e-mail da empresa"
                     class="form-control input-md" required="">
                   </div>
                 </div>
-                <div class="form-group has-success">
+                <div class="form-group">
                   <label class="col-md-4 control-label" for="email">Senha:</label>
                   <div class="col-md-6">
-                    <input id="email" name="email" type="password" placeholder="Digite a senha da empresa"
+                    <input id="email" name="senha" type="password" placeholder="Digite a senha da empresa"
+                    class="form-control input-md" required="">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="col-md-4 control-label" for="email">Repita a senha:</label>
+                  <div class="col-md-6">
+                    <input id="email" name="resenha" type="password" placeholder="Repita a senha da empresa"
                     class="form-control input-md" required="">
                   </div>
                 </div>
@@ -116,19 +121,19 @@
               </fieldset>
             </form>
           </div>
-          <div class="tab-pane" id="tab2">
-            <hr>
-            <p>Olá, estou na seção 2</p>
-          </div>
+          
+          <%
+          List<Empresa> empresas = Fachada.getInstance().cadastroEmpresa().listar();
+          %>
+          
           <div class="tab-pane" id="tab3">
-            <p>Olá, estou na seção 3</p>
             <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
             <script src="http://templateplanet.info/tooltip.js"></script>
             <script src="http://templateplanet.info/modal.js"></script>
             <div class="container">
               <div class="row">
                 <div class="col-md-12">
-                  <h4>Bootstrap Snipp for Datatable</h4>
+                  <h4>Empresas Cadastradas</h4>
                   <div class="table-responsive">
                     <table id="mytable" class="table table-bordred table-striped">
                       <thead>
@@ -136,21 +141,22 @@
                           <th>
                             <input type="checkbox" id="checkall">
                           </th>
-                          <th>First Name</th>
-                          <th>Last Name</th>
-                          <th>Address</th>
+                          <th>Raz�o Social</th>
+                          <th>CNPJ</th>
+                          <th>E-Mail</th>
                           <th>Edit</th>
                           <th>Delete</th>
                         </tr>
                       </thead>
                       <tbody>
+                      <% for (Empresa emp : empresas){ %>
                         <tr>
                           <td>
                             <input type="checkbox" class="checkthis">
                           </td>
-                          <td>Mohsin</td>
-                          <td>Irshad</td>
-                          <td>CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan</td>
+                          <td><%=emp.getRazao() %></td>
+                          <td><%=emp.getCnpj() %></td>
+                          <td><%=emp.getEmail() %></td>
                           <td>
                             <p>
                               <button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal"
@@ -168,102 +174,7 @@
                             </p>
                           </td>
                         </tr>
-                        <tr>
-                          <td>
-                            <input type="checkbox" class="checkthis">
-                          </td>
-                          <td>Mohsin</td>
-                          <td>Irshad</td>
-                          <td>CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan</td>
-                          <td>
-                            <p>
-                              <button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal"
-                              data-target="#edit" data-placement="top" rel="tooltip">
-                                <span class="glyphicon glyphicon-pencil"></span>
-                              </button>
-                            </p>
-                          </td>
-                          <td>
-                            <p>
-                              <button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal"
-                              data-target="#delete" data-placement="top" rel="tooltip">
-                                <span class="glyphicon glyphicon-trash"></span>
-                              </button>
-                            </p>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <input type="checkbox" class="checkthis">
-                          </td>
-                          <td>Mohsin</td>
-                          <td>Irshad</td>
-                          <td>CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan</td>
-                          <td>
-                            <p>
-                              <button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal"
-                              data-target="#edit" data-placement="top" rel="tooltip">
-                                <span class="glyphicon glyphicon-pencil"></span>
-                              </button>
-                            </p>
-                          </td>
-                          <td>
-                            <p>
-                              <button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal"
-                              data-target="#delete" data-placement="top" rel="tooltip">
-                                <span class="glyphicon glyphicon-trash"></span>
-                              </button>
-                            </p>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <input type="checkbox" class="checkthis">
-                          </td>
-                          <td>Mohsin</td>
-                          <td>Irshad</td>
-                          <td>CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan</td>
-                          <td>
-                            <p>
-                              <button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal"
-                              data-target="#edit" data-placement="top" rel="tooltip">
-                                <span class="glyphicon glyphicon-pencil"></span>
-                              </button>
-                            </p>
-                          </td>
-                          <td>
-                            <p>
-                              <button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal"
-                              data-target="#delete" data-placement="top" rel="tooltip">
-                                <span class="glyphicon glyphicon-trash"></span>
-                              </button>
-                            </p>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <input type="checkbox" class="checkthis">
-                          </td>
-                          <td>Mohsin</td>
-                          <td>Irshad</td>
-                          <td>CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan</td>
-                          <td>
-                            <p>
-                              <button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal"
-                              data-target="#edit" data-placement="top" rel="tooltip">
-                                <span class="glyphicon glyphicon-pencil"></span>
-                              </button>
-                            </p>
-                          </td>
-                          <td>
-                            <p>
-                              <button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal"
-                              data-target="#delete" data-placement="top" rel="tooltip">
-                                <span class="glyphicon glyphicon-trash"></span>
-                              </button>
-                            </p>
-                          </td>
-                        </tr>
+                        <%} %>
                       </tbody>
                     </table>
                     <div class="clearfix"></div>
@@ -275,16 +186,7 @@
                         <a href="#">1</a>
                       </li>
                       <li>
-                        <a href="#">2</a>
-                      </li>
-                      <li>
                         <a href="#">3</a>
-                      </li>
-                      <li>
-                        <a href="#">4</a>
-                      </li>
-                      <li>
-                        <a href="#">5</a>
                       </li>
                       <li>
                         <a href="#"><span class="glyphicon glyphicon-chevron-right"></span></a>
@@ -345,9 +247,6 @@
               </div>
               <!-- /.modal-dialog -->
             </div>
-          </div>
-          <div class="tab-pane" id="tab4">
-            <p>Olá, estou na seção 4</p>
           </div>
         </div>
         <!-- Only required for left/right tabs -->
