@@ -26,7 +26,7 @@ String pagina = "";
 		
 		try{
 		
-			Fachada.getInstance().cadastroUsuario().cadastrarRepresentante(u);
+			Fachada.getInstance().cadastroUsuario().cadastrar(u);
 			pagina = "adm_usuario.jsp?msg=sucesso";
 		}
 		catch(Exception e){

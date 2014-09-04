@@ -9,7 +9,7 @@ public class CadastroRota {
 
 	private RepositorioRota rep;
 	
-	public CadastroRota(RepositorioRota rro){
+	public CadastroRota(RepositorioRota rep){
 		this.rep = rep;
 	}
 	

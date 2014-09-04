@@ -7,9 +7,9 @@ import org.hibernate.service.ServiceRegistry;
 import org.hibernate.service.ServiceRegistryBuilder;
 
 import reclame.entidades.Empresa;
-import reclame.entidades.Rota;
-import reclame.entidades.Rota;
+import reclame.entidades.Onibus;
 import reclame.entidades.Reclamacao;
+import reclame.entidades.Rota;
 import reclame.entidades.Usuario;
 
 
@@ -24,7 +24,7 @@ public class HibernateUtil {
 		configuration.addAnnotatedClass(Usuario.class);
 		configuration.addAnnotatedClass(Empresa.class);
 		configuration.addAnnotatedClass(Rota.class);
-		configuration.addAnnotatedClass(Rota.class);
+		configuration.addAnnotatedClass(Onibus.class);
 		configuration.addAnnotatedClass(Reclamacao.class);
 		
 		configuration.configure();

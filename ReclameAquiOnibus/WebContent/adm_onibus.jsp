@@ -57,13 +57,7 @@
             <a href="#tab1" data-toggle="tab"><span class="glyphicon glyphicon-plus"></span>  Cadastrar</a>
           </li>
           <li>
-            <a href="#tab2" data-toggle="tab"><span class="glyphicon glyphicon-saved"></span>   Editar</a>
-          </li>
-          <li>
             <a href="#tab3" data-toggle="tab"><span class="glyphicon glyphicon-list"></span>   Listar</a>
-          </li>
-          <li>
-            <a href="#tab4" data-toggle="tab"><span class="glyphicon glyphicon-remove"></span>   Excluir</a>
           </li>
         </ul>
         <div class="tab-content">
@@ -81,22 +75,6 @@
                     class="form-control input-md" required="">
                   </div>
                 </div>
-                <div class="form-group">
-                  <label class="col-md-4 control-label" for="senha">Nome do ônibus:</label>
-                  <div class="col-md-6">
-                    <input id="senha" name="senha" type="text" placeholder="Digite o nome do ônibus"
-                    class="form-control input-md" required="">
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="col-md-4 control-label" for="repetirsenha">Empresa vinculada:</label>
-                  <div class="col-md-6">
-                    <input id="repetirsenha" name="repetirsenha" type="text" placeholder="Digite o nome da empresa vinculada"
-                    class="form-control input-md" required="">
-                  </div>
-                </div>
-                <!-- Password input-->
-                <!-- Password input-->
                 <!-- Text input-->
                 <div class="form-group">
                   <label class="col-md-4 control-label" for="email">Rota vinculada:</label>
@@ -116,19 +94,14 @@
               </fieldset>
             </form>
           </div>
-          <div class="tab-pane" id="tab2">
-            <hr>
-            <p>Olá, estou na seção 2</p>
-          </div>
           <div class="tab-pane" id="tab3">
-            <p>Olá, estou na seção 3</p>
             <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
             <script src="http://templateplanet.info/tooltip.js"></script>
             <script src="http://templateplanet.info/modal.js"></script>
             <div class="container">
               <div class="row">
                 <div class="col-md-12">
-                  <h4>Bootstrap Snipp for Datatable</h4>
+                  <h4>�nibus Cadastrados</h4>
                   <div class="table-responsive">
                     <table id="mytable" class="table table-bordred table-striped">
                       <thead>
@@ -136,110 +109,14 @@
                           <th>
                             <input type="checkbox" id="checkall">
                           </th>
-                          <th>First Name</th>
-                          <th>Last Name</th>
-                          <th>Address</th>
+                          <th>N�mero</th>
+                          <th>Nome da Rota</th>
+                          <th>Empresa</th>
                           <th>Edit</th>
                           <th>Delete</th>
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
-                          <td>
-                            <input type="checkbox" class="checkthis">
-                          </td>
-                          <td>Mohsin</td>
-                          <td>Irshad</td>
-                          <td>CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan</td>
-                          <td>
-                            <p>
-                              <button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal"
-                              data-target="#edit" data-placement="top" rel="tooltip">
-                                <span class="glyphicon glyphicon-pencil"></span>
-                              </button>
-                            </p>
-                          </td>
-                          <td>
-                            <p>
-                              <button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal"
-                              data-target="#delete" data-placement="top" rel="tooltip">
-                                <span class="glyphicon glyphicon-trash"></span>
-                              </button>
-                            </p>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <input type="checkbox" class="checkthis">
-                          </td>
-                          <td>Mohsin</td>
-                          <td>Irshad</td>
-                          <td>CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan</td>
-                          <td>
-                            <p>
-                              <button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal"
-                              data-target="#edit" data-placement="top" rel="tooltip">
-                                <span class="glyphicon glyphicon-pencil"></span>
-                              </button>
-                            </p>
-                          </td>
-                          <td>
-                            <p>
-                              <button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal"
-                              data-target="#delete" data-placement="top" rel="tooltip">
-                                <span class="glyphicon glyphicon-trash"></span>
-                              </button>
-                            </p>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <input type="checkbox" class="checkthis">
-                          </td>
-                          <td>Mohsin</td>
-                          <td>Irshad</td>
-                          <td>CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan</td>
-                          <td>
-                            <p>
-                              <button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal"
-                              data-target="#edit" data-placement="top" rel="tooltip">
-                                <span class="glyphicon glyphicon-pencil"></span>
-                              </button>
-                            </p>
-                          </td>
-                          <td>
-                            <p>
-                              <button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal"
-                              data-target="#delete" data-placement="top" rel="tooltip">
-                                <span class="glyphicon glyphicon-trash"></span>
-                              </button>
-                            </p>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <input type="checkbox" class="checkthis">
-                          </td>
-                          <td>Mohsin</td>
-                          <td>Irshad</td>
-                          <td>CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan</td>
-                          <td>
-                            <p>
-                              <button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal"
-                              data-target="#edit" data-placement="top" rel="tooltip">
-                                <span class="glyphicon glyphicon-pencil"></span>
-                              </button>
-                            </p>
-                          </td>
-                          <td>
-                            <p>
-                              <button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal"
-                              data-target="#delete" data-placement="top" rel="tooltip">
-                                <span class="glyphicon glyphicon-trash"></span>
-                              </button>
-                            </p>
-                          </td>
-                        </tr>
                         <tr>
                           <td>
                             <input type="checkbox" class="checkthis">
@@ -275,16 +152,7 @@
                         <a href="#">1</a>
                       </li>
                       <li>
-                        <a href="#">2</a>
-                      </li>
-                      <li>
                         <a href="#">3</a>
-                      </li>
-                      <li>
-                        <a href="#">4</a>
-                      </li>
-                      <li>
-                        <a href="#">5</a>
                       </li>
                       <li>
                         <a href="#"><span class="glyphicon glyphicon-chevron-right"></span></a>
