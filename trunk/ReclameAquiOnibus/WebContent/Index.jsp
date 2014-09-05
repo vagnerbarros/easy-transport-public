@@ -14,13 +14,13 @@
   </head>
   
   <body class="visible-lg visible-md visible-sm visible-xs">
-    <div class="navbar navbar-default navbar-static-top navbar-inverse" draggable="true">
+    <div class="navbar navbar-default navbar-static-top navbar-inverse">
       <style>
         .body{padding-top:70px}
       </style>
       <div class="container">
         <div class="navbar-header">
-          <a type="button" class="navbar-toggle" data	-toggle="collapse" data-target=".navbar-collapse"></a>
+          <a type="button" class="navbar-toggle" data="" -toggle="collapse" data-target=".navbar-collapse"></a>
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
@@ -29,7 +29,7 @@
         <div class="collapse navbar-collapse navbar-ex1-collapse">
           <ul class="nav navbar-left navbar-nav">
             <li class="active">
-              <a href="Index.jsp">Início</a>
+              <a href="Index.jsp">InÃ­cio</a>
             </li>
             <li>
               <a href="contato.jsp"><span class="glyphicon glyphicon-star"></span>   Contato</a>
@@ -43,21 +43,22 @@
         <div class="col-md-6">
           <img src="images/reclame.png" class="img-responsive">
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6 text-center" draggable="true">
           <div class="alert alert-danger hide  alert-dismissable">
             <button contenteditable="false" type="button" class="close" data-dismiss="alert"
             aria-hidden="true">Ã—</button>
             <strong>Erro!</strong>Digite seu e-mail e senha novamente.</div>
           <hr>
-          <form class="form-horizontal text-left" role="form" action="controlador" method="POST">
-          <input type="hidden" name="acao" value="logar" />
+          <form class="form-horizontal text-left" role="form" action="controlador"
+          method="POST">
+            <input type="hidden" name="acao" value="logar">
             <div class="form-group has-success">
               <div class="col-sm-2">
                 <label for="inputEmail3" class="control-label">Email</label>
               </div>
               <div class="col-sm-10">
-                <input type="email" class="form-control" required="required" name="email" id="inputEmail3"
-                placeholder="E-mail">
+                <input type="email" class="form-control" required="required" name="email"
+                id="inputEmail3" placeholder="E-mail">
               </div>
             </div>
             <div class="form-group has-success">
@@ -65,15 +66,15 @@
                 <label for="inputPassword3" class="control-label">Password</label>
               </div>
               <div class="col-sm-10">
-                <input type="password" class="form-control" required="required" name="senha" id="inputPassword3"
-                placeholder="Senha">
+                <input type="password" class="form-control" required="required" name="senha"
+                id="inputPassword3" placeholder="Senha">
               </div>
             </div>
             <div class="form-group">
               <div class="col-sm-offset-2 col-sm-10">
                 <div class="checkbox">
                   <label>
-                    <input type="checkbox">Esqueçeu sua senha ? </label>
+                    <input type="checkbox">Esqueï¿½eu sua senha ?</label>
                 </div>
               </div>
             </div>
@@ -84,13 +85,20 @@
             </div>
           </form>
           <hr>
-          <div class="row text-right">Não tem cadastrado ?
+          <div class="row text-right">NÃ£o tem cadastrado ?
             <a href="cadastro.jsp">Clique aqui!</a>
           </div>
+          <hr>
+          <hr>
+          <hr>
+          <hr>
+          <img src="images\empresa.png" class="center-block img-responsive">
+          <a href="emp_index.jsp">Clique aqui!</a>
+          <hr>
         </div>
       </div>
       <div class="navbar navbar-default navbar-fixed-bottom navbar-inverse">
-        <h4 class="text-center">© 2013 - 2014 EasyTrans - Todos os direitos reservados.</h4>
+        <h4 class="text-center">Â© 2013 - 2014 EasyTrans - Todos os direitos reservados.</h4>
       </div>
     </div>
   </body>

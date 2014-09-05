@@ -35,12 +35,6 @@
               <a href="emp_responder.jsp"><span class="glyphicon glyphicon-file"></span>   Responder reclamação</a>
             </li>
             <li>
-              <a href="emp_onibus.jsp"><span class="glyphicon glyphicon-road"></span>   Ônibus</a>
-            </li>
-            <li>
-              <a href="emp_rota.jsp"><span class="glyphicon glyphicon-flag"> Rota</span></a>
-            </li>
-            <li>
               <a href="sair.jsp"><span class="glyphicon glyphicon-off"> SAIR</span></a>
             </li>
           </ul>
