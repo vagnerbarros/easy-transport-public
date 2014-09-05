@@ -29,7 +29,7 @@
         <div class="collapse navbar-collapse navbar-ex1-collapse">
           <ul class="nav navbar-left navbar-nav">
             <li>
-              <a href="Index.jsp"><span class="glyphicon glyphicon-star"></span> In�cio</a>
+              <a href="Index.jsp"><span class="glyphicon glyphicon-star"></span> Início</a>
             </li>
             <li class="active">
               <a href="contato.jsp">   Contato</a>
@@ -45,15 +45,17 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md-5 text-left">
-          <img src="Imagens\easy.jpg" class="center-block img-responsive img-rounded">
+        <div class="col-md-7 text-left">
+          <img src="images\easy.jpg" class="center-block img-responsive img-rounded">
+          <p class="text-left">Somos um grupo de estudantes, que decidiu resolver um problema real da
+            sociedade como o nosso projeto de conclusão.
+            <br>O nosso papel é ajudar as pessoas que são usuárias de Transporte Publico
+            a ter um meio de comunicação mais eficiente com os responsáveis desse setor.
+            <br>
+            <b>E-mail para contato: easytrans@gmail.com</b>
+          </p>
         </div>
-        <div class="col-md-7">
-          <p class="text-left">Somos um grupo de estudantes, que decidiu  resolver um problema real da sociedade como o nosso projeto de conclusão.
-          <br>O nosso papel é ajudar as pessoas que são usuárias de Transporte Publico a ter um meio de comunicação mais eficiente com os responsáveis
-		  desse setor.
-           </p>
-        </div>
+        <div class="col-md-4"></div>
       </div>
     </div>
     <div class="container">
