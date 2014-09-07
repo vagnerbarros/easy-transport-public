@@ -74,7 +74,7 @@
               <div class="col-sm-offset-2 col-sm-10">
                 <div class="checkbox">
                   <label>
-                    <input type="checkbox">Esqueï¿½eu sua senha ?</label>
+                    <a href="#">Esqueçeu sua senha ?</a> </label>
                 </div>
               </div>
             </div>
