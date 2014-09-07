@@ -20,6 +20,11 @@ public class CadastroEmpresa {
 		rep.inserir(nova);
 	}
 	
+	public Empresa logar(String email, String senha) {
+		senha = Criptografia.encryptPassword(senha);
+		return rep.logar(email, senha);
+	}
+	
 	public Empresa buscarId(int id){
 		return rep.buscarPorId(id);
 	}

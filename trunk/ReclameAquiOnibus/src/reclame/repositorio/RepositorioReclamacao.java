@@ -44,4 +44,8 @@ public class RepositorioReclamacao {
 		del.setStatus(Constants.INATIVO);
 		dao.atualizarObjeto(del);
 	}
+
+	public List<Reclamacao> listarReclamacoesEmpresa(int id_empresa) {
+		return (List<Reclamacao>) dao.criarQuery("FROM reclamacao WHERE id_empresa = " + id_empresa + " AND status <> '" + Constants.INATIVO + "'");
+	}
 }

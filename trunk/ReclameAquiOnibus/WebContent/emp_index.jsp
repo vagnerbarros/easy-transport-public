@@ -51,9 +51,8 @@
           <hr>
           <img src="images\empresa.png" class="center-block img-responsive">
           <hr>
-          <form class="form-horizontal text-left" role="form" action="controlador"
-          method="POST">
-            <input type="hidden" name="acao" value="logar">
+          <form role="form" action="controlador" method="POST" class="form-horizontal text-left" >
+            <input type="hidden" name="acao" value="logar_empresa">
             <div class="form-group has-success">
               <div class="col-sm-2">
                 <label for="inputEmail3" class="control-label">Email</label>

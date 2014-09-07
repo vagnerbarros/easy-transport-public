@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<%@page import="reclame.entidades.Empresa"%>
+<%@page import="reclame.fachada.Fachada"%>
+<%@page import="reclame.entidades.Reclamacao"%>
+<%@page import="java.util.List"%>
 <html>
   
   <head>
@@ -12,6 +16,14 @@
     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
   </head>
+  
+  
+  <%
+  
+  Empresa emp = (Empresa) session.getAttribute("empresa_logada");
+  List<Reclamacao> reclamacoes = Fachada.getInstance().cadastroReclamacao().listarReclamacoesEmpresa(emp.getId());
+  
+  %>
   
   <body class="visible-lg visible-md visible-sm visible-xs">
     <div class="navbar navbar-default navbar-static-top navbar-inverse">
@@ -32,7 +44,7 @@
               <a href="emp_responder.jsp"><span class="glyphicon glyphicon-file"></span>   Responder reclama√ß√£o</a>
             </li>
             <li>
-              <a href="sair.jsp"><span class="glyphicon glyphicon-off"> SAIR</span></a>
+              <a href="controlador?acao=logout"><span class="glyphicon glyphicon-off"> SAIR</span></a>
             </li>
           </ul>
         </div>
@@ -48,7 +60,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <h2 class="text-primary">Reclama√ß√µes</h2>
+          <h2 class="text-primary">ReclamaÁıes da Empresa <%=emp.getRazao() %></h2>
           <div class="table-responsive">
             <table id="mytable" class="table table-bordred table-striped">
               <thead>
@@ -56,23 +68,22 @@
                   <th>
                     <input type="checkbox" id="checkall">
                   </th>
-                  <th>Nome do usu√°rio</th>
-                  <th>√înibus</th>
+                  <th>Nome do Usu·rio</th>
                   <th>Rota</th>
-                  <th>Reclama√ß√£o</th>
+                  <th>ReclamaÁ„o</th>
                   <th>Responder</th>
                   <th>Pendente</th>
                 </tr>
               </thead>
               <tbody>
+              	<% for (Reclamacao rec : reclamacoes){ %>
                 <tr>
                   <td>
                     <input type="checkbox" class="checkthis">
                   </td>
-                  <td>Mohsin</td>
-                  <td>Mohsin</td>
-                  <td>Irshad</td>
-                  <td>bla bal bal bal bal</td>
+                  <td><%=rec.getUsuario().getNome() %></td>
+                  <td><%=rec.getLinha().getNome() %></td>
+                  <td><%=rec.getDescricao_reclamacao() %></td>
                   <td>
                     <p>
                       <button class="btn btn-success btn-xs" data-title="responder" data-toggle="modal"
@@ -90,106 +101,7 @@
                     </p>
                   </td>
                 </tr>
-                <tr>
-                  <td>
-                    <input type="checkbox" class="checkthis">
-                  </td>
-                  <td>Mohsin</td>
-                  <td>Mohsin</td>
-                  <td>Irshad</td>
-                  <td>bla bal bal bal bal</td>
-                  <td>
-                    <p>
-                      <button class="btn btn-success btn-xs" data-title="responder" data-toggle="modal"
-                      data-target="#responder" data-placement="top" rel="tooltip">
-                        <span class="glyphicon glyphicon-pencil"></span>
-                      </button>
-                    </p>
-                  </td>
-                  <td>
-                    <p>
-                      <button class="btn btn-warning btn-xs" data-title="pendente" data-toggle="modal"
-                      data-target="#pendente" data-placement="top" rel="tooltip">
-                        <span class="glyphicon glyphicon-trash"></span>
-                      </button>
-                    </p>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <input type="checkbox" class="checkthis">
-                  </td>
-                  <td>Mohsin</td>
-                  <td>Mohsin</td>
-                  <td>Irshad</td>
-                  <td>bla bal bal bal bal</td>
-                  <td>
-                    <p>
-                      <button class="btn btn-success btn-xs" data-title="responder" data-toggle="modal"
-                      data-target="#responder" data-placement="top" rel="tooltip">
-                        <span class="glyphicon glyphicon-pencil"></span>
-                      </button>
-                    </p>
-                  </td>
-                  <td>
-                    <p>
-                      <button class="btn btn-warning btn-xs" data-title="pendente" data-toggle="modal"
-                      data-target="#pendente" data-placement="top" rel="tooltip">
-                        <span class="glyphicon glyphicon-trash"></span>
-                      </button>
-                    </p>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <input type="checkbox" class="checkthis">
-                  </td>
-                  <td>Mohsin</td>
-                  <td>Mohsin</td>
-                  <td>Irshad</td>
-                  <td>bla bal bal bal bal</td>
-                  <td>
-                    <p>
-                      <button class="btn btn-success btn-xs" data-title="responder" data-toggle="modal"
-                      data-target="#responder" data-placement="top" rel="tooltip">
-                        <span class="glyphicon glyphicon-pencil"></span>
-                      </button>
-                    </p>
-                  </td>
-                  <td>
-                    <p>
-                      <button class="btn btn-warning btn-xs" data-title="pendente" data-toggle="modal"
-                      data-target="#pendente" data-placement="top" rel="tooltip">
-                        <span class="glyphicon glyphicon-trash"></span>
-                      </button>
-                    </p>
-                  </td>
-                </tr>
-                <tr>
-                  <td>
-                    <input type="checkbox" class="checkthis">
-                  </td>
-                  <td>Mohsin</td>
-                  <td>Mohsin</td>
-                  <td>Irshad</td>
-                  <td>bla bal bal bal bal</td>
-                  <td>
-                    <p>
-                      <button class="btn btn-success btn-xs" data-title="responder" data-toggle="modal"
-                      data-target="#responder" data-placement="top" rel="tooltip">
-                        <span class="glyphicon glyphicon-pencil"></span>
-                      </button>
-                    </p>
-                  </td>
-                  <td>
-                    <p>
-                      <button class="btn btn-warning btn-xs" data-title="pendente" data-toggle="modal"
-                      data-target="#pendente" data-placement="top" rel="tooltip">
-                        <span class="glyphicon glyphicon-trash"></span>
-                      </button>
-                    </p>
-                  </td>
-                </tr>
+                <% } %>
               </tbody>
             </table>
             <div class="clearfix"></div>

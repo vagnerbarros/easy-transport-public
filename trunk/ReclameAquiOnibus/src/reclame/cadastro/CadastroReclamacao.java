@@ -33,4 +33,8 @@ public class CadastroReclamacao {
 	public List<Reclamacao> listar(){
 		return rep.listar();
 	}
+	
+	public List<Reclamacao> listarReclamacoesEmpresa(int id_empresa){
+		return rep.listarReclamacoesEmpresa(id_empresa);
+	}
 }
