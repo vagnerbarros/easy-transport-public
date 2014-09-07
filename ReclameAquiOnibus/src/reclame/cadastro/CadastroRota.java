@@ -13,6 +13,10 @@ public class CadastroRota {
 		this.rep = rep;
 	}
 	
+	public Rota buscarId(long id){
+		return rep.buscarPorId(id);
+	}
+	
 	public void cadastrar(Rota nova){
 		rep.inserir(nova);
 	}

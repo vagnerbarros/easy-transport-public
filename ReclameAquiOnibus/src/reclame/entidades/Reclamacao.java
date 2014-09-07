@@ -19,16 +19,16 @@ public class Reclamacao {
 	@GeneratedValue
 	private int id;
 	
-	@Column(name = "situacao", length = 10, nullable = false)
+	@Column(name = "situacao", length = 10, nullable = true)
 	private String situacao;
 	
-	@Column(name = "resposta", length = 100, nullable = false)
+	@Column(name = "resposta", length = 100, nullable = true)
 	private String resposta;
 	
 	@Column(name = "descricao_reclamacao", length = 50, nullable = false)
 	private String descricao_reclamacao;
 	
-	@Column(name = "tipo", length = 10, nullable = false)
+	@Column(name = "tipo", length = 10, nullable = true)
 	private String tipo;
 	
 	@Column(name="data_reclamacao")
@@ -67,7 +67,7 @@ public class Reclamacao {
 		return situacao;
 	}
 	public void setSituacao(String situacaos) {
-		this.situacao = situacao;
+		this.situacao = situacaos;
 	}
 	public String getResposta() {
 		return resposta;

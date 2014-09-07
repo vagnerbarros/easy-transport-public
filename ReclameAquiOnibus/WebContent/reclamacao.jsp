@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+<%@page import="reclame.entidades.Usuario"%>
+<%@page import="reclame.entidades.Rota"%>
+<%@page import="reclame.fachada.Fachada"%>
+<%@page import="reclame.entidades.Empresa"%>
+<%@page import="java.util.List"%>
 <html>
   
   <head>
@@ -32,36 +37,43 @@
               <a href="home.jsp"><span class="glyphicon glyphicon-star"></span>   In√≠cio</a>
             </li>
             <li class="active">
-              <a href="reclamacao.jsp"><span class="glyphicon glyphicon-flash"></span>   Efetuar uma reclama√ß√£o</a>
+              <a href="reclamacao.jsp"><span class="glyphicon glyphicon-flash"></span>   Efetuar uma reclamaÁ„o</a>
             </li>
             <li>
-              <a href="LocalOnibus.jsp"><span class="glyphicon glyphicon-flag"></span>   Veja onde est√° seu √¥nibus</a>
+              <a href="LocalOnibus.jsp"><span class="glyphicon glyphicon-flag"></span>   Veja onde est· seu ‘nibus</a>
             </li>
             <li>
-              <a href="feed.jsp"><span class="glyphicon glyphicon-tasks">   Feed de reclama√ß√µes</span></a>
+              <a href="feed.jsp"><span class="glyphicon glyphicon-tasks">   Feed de reclamaÁıes</span></a>
             </li>
             <li>
-              <a href="sair.jsp"><span class="glyphicon glyphicon-off"> SAIR</span></a>
+              <a href="controlador?acao=logout"><span class="glyphicon glyphicon-off"> Sair</span></a>
             </li>
           </ul>
         </div>
       </div>
     </div>
+    <%
+    List<Empresa> empresas = Fachada.getInstance().cadastroEmpresa().listar();
+    List<Rota> rotas = Fachada.getInstance().cadastroRota().listar();
+    Usuario usuario = (Usuario) session.getAttribute("usuario");
+    %>
+    
     <div class="container">
       <div class="row">
-        <form class="form-horizontal">
+        <form action="controlador" method="POST" class="form-horizontal">
+        	<input type="hidden" name="acao" value="efetuar_reclamacao" />
+        	<input type="hidden" name="usuario" value="<%=usuario.getId() %>" />
           <fieldset>
             <!-- Form Name -->
-            <legend>Enviar uma reclama√ß√£o</legend>
+            <legend>Fazer uma reclamaÁ„o</legend>
             <!-- Select Basic -->
             <div class="control-group">
               <label class="control-label" for="empresa">Selecione a empresa:</label>
               <div class="controls">
                 <select id="empresa" name="empresa" class="input-xlarge">
-                  <option>Bahia</option>
-                  <option>Capital do Agreste</option>
-                  <option>Tabosa</option>
-                  <option>Coletivo</option>
+                  <% for(Empresa emp : empresas){ %>
+                  <option value="<%=emp.getId() %>"><%=emp.getRazao() %></option>
+                  <%} %>
                 </select>
               </div>
             </div>
@@ -69,24 +81,18 @@
             <div class="control-group">
               <label class="control-label" for="linha">Selecione a linha:</label>
               <div class="controls">
-                <select id="linha" name="linha" class="input-xlarge">
-                  <option>Fafica -Via Pitombeira</option>
-				  <option>Bairro Agamenon</option>
-                  <option>Boa Vista I</option>
-                  <option>Bairro Universit√°rio</option>
+                <select id="linha" name="linha" class="input-xlarge" onchange="">
+                <% for(Rota r : rotas){ %>
+                  <option value="<%=r.getId() %>"><%=r.getNome() %></option>
+				 <%} %>
                 </select>
               </div>
             </div>
             <!-- Select Basic -->
             <div class="control-group">
-              <label class="control-label" for="hora">Selecione o hor√°rio:</label>
+              <label class="control-label" for="hora">Hor·rio:</label>
               <div class="controls">
-                <select id="hora" name="hora" class="input-xlarge">
-                  <option>8:00 √†s 8:30</option>
-                  <option>8:30 √†s 9:00</option>
-                  <option>9:00 √†s 9:30</option>
-                  <option>9:30 √†s 10:00</option>
-                </select>
+                <input id="hora" name="hora" class="input-xlarge">
               </div>
             </div>
             <!-- Textarea -->
@@ -98,9 +104,9 @@
             </div>
             <!-- Textarea -->
             <div class="control-group">
-              <label class="control-label" for="Sugestoes">Sugest√µes:</label>
+              <label class="control-label" for="Sugestoes">Sugestıes:</label>
               <div class="controls">
-                <textarea id="Sugestoes" name="Sugestoes" style="margin: 0px; height: 115px; width: 243px;"></textarea>
+                <textarea id="Sugestoes" name="sugestoes" style="margin: 0px; height: 115px; width: 243px;"></textarea>
               </div>
             </div>
             <!-- Button (Double) -->

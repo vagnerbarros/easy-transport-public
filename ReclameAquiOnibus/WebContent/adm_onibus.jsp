@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<%@page import="reclame.entidades.Onibus"%>
+<%@page import="reclame.fachada.Fachada"%>
+<%@page import="reclame.entidades.Rota"%>
+<%@page import="java.util.List"%>
 <html>
   
   <head>
@@ -44,12 +48,17 @@
               <a href="adm_rota.jsp"><span class="glyphicon glyphicon-flag"> Rota</span></a>
             </li>
             <li>
-              <a href="sair.jsp"><span class="glyphicon glyphicon-off"> SAIR</span></a>
+              <a href="controlador?acao=logout"><span class="glyphicon glyphicon-off"> SAIR</span></a>
             </li>
           </ul>
         </div>
       </div>
     </div>
+    
+    <%
+    List<Rota> rotas = Fachada.getInstance().cadastroRota().listar();
+    
+    %>
     <div class="container">
       <div class="tabbable">
         <ul class="nav nav-tabs">
@@ -64,14 +73,15 @@
           <div class="tab-pane active" id="tab1">
             <p draggable="true"></p>
             <hr>
-            <form class="form-horizontal">
+            <form class="form-horizontal" method="POST" action="controlador">
+            	<input type="hidden" name="acao" value="cadastrar_onibus" >
               <fieldset>
                 <!-- Form Name -->
                 <!-- Text input-->
                 <div class="form-group">
-                  <label class="col-md-4 control-label" for="nome">Número do ônibus:</label>
+                  <label class="col-md-4 control-label" for="nome">N�mero do �nibus:</label>
                   <div class="col-md-6">
-                    <input id="nome" name="nome" type="text" placeholder="Digite o número do ônibus"
+                    <input id="nome" name="numero" type="text" placeholder="Digite o n�mero do �nibus"
                     class="form-control input-md" required="">
                   </div>
                 </div>
@@ -79,8 +89,11 @@
                 <div class="form-group">
                   <label class="col-md-4 control-label" for="email">Rota vinculada:</label>
                   <div class="col-md-6">
-                    <input id="email" name="email" type="text" placeholder="Digite o nome da rota vinculada"
-                    class="form-control input-md" required="">
+                  	<select id="email" name="rota" class="form-control input-md" required="">
+                  		<%for (Rota r : rotas){ %>
+                  			<option value="<%=r.getId() %>"><%=r.getNome() + " - " + r.getEmpresa().getRazao() %></option>
+                  		<% } %>
+                  	</select>
                   </div>
                 </div>
                 <!-- Button (Double) -->
@@ -94,6 +107,13 @@
               </fieldset>
             </form>
           </div>
+          
+          <%
+          
+          List<Onibus> onibus = Fachada.getInstance().cadastroOnibus().listar();
+                		  
+          %>
+          
           <div class="tab-pane" id="tab3">
             <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
             <script src="http://templateplanet.info/tooltip.js"></script>
@@ -117,17 +137,18 @@
                         </tr>
                       </thead>
                       <tbody>
+                      <% for (Onibus o : onibus){ %>
                         <tr>
                           <td>
                             <input type="checkbox" class="checkthis">
                           </td>
-                          <td>Mohsin</td>
-                          <td>Irshad</td>
-                          <td>CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan</td>
+                          <td><%=o.getNumero() %></td>
+                          <td><%=o.getRota().getNome() %></td>
+                          <td><%=o.getRota().getEmpresa().getRazao() %></td>
                           <td>
                             <p>
                               <button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal"
-                              data-target="#edit" data-placement="top" rel="tooltip">
+                              data-target="#edit" data-placement="top" data-book-id="<%=o.getId() %>" >
                                 <span class="glyphicon glyphicon-pencil"></span>
                               </button>
                             </p>
@@ -135,12 +156,13 @@
                           <td>
                             <p>
                               <button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal"
-                              data-target="#delete" data-placement="top" rel="tooltip">
+                              data-target="#delete" data-placement="top" name="id" value="<%=o.getId() %>" rel="tooltip">
                                 <span class="glyphicon glyphicon-trash"></span>
                               </button>
                             </p>
                           </td>
                         </tr>
+                        <% } %>
                       </tbody>
                     </table>
                     <div class="clearfix"></div>
@@ -162,12 +184,11 @@
                 </div>
               </div>
             </div>
-            <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="edit"
-            aria-hidden="true">
+            <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="edit"  aria-hidden="true">
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">X</button>
                     <h4 class="modal-title custom_align" id="Heading">Edit Your Detail</h4>
                   </div>
                   <div class="modal-body">
@@ -213,9 +234,6 @@
               </div>
               <!-- /.modal-dialog -->
             </div>
-          </div>
-          <div class="tab-pane" id="tab4">
-            <p>Olá, estou na seção 4</p>
           </div>
         </div>
         <!-- Only required for left/right tabs -->

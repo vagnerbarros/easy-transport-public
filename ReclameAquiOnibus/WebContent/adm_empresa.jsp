@@ -47,7 +47,7 @@
               <a href="adm_rota.jsp"><span class="glyphicon glyphicon-flag"> Rota</span></a>
             </li>
             <li>
-              <a href="sair.jsp"><span class="glyphicon glyphicon-off"> SAIR</span></a>
+              <a href="controlador?acao=logout"><span class="glyphicon glyphicon-off"> SAIR</span></a>
             </li>
           </ul>
         </div>

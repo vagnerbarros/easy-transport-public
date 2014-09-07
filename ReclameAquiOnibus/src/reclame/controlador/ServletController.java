@@ -13,10 +13,13 @@ import javax.servlet.http.HttpServletResponse;
 
 import reclame.model.Acao;
 import reclame.model.CadastrarEmpresa;
+import reclame.model.CadastrarOnibus;
 import reclame.model.CadastrarRepresentante;
 import reclame.model.CadastrarRota;
 import reclame.model.CadastrarUsuario;
+import reclame.model.EfetuarReclamacao;
 import reclame.model.Logar;
+import reclame.model.Logout;
 
 
 /**
@@ -41,6 +44,9 @@ public class ServletController extends HttpServlet {
 		mapa.put("cadastrar_representante", new CadastrarRepresentante());
 		mapa.put("cadastrar_empresa", new CadastrarEmpresa());
 		mapa.put("cadastrar_rota", new CadastrarRota());
+		mapa.put("cadastrar_onibus", new CadastrarOnibus());
+		mapa.put("logout", new Logout());
+		mapa.put("efetuar_reclamacao", new EfetuarReclamacao());
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

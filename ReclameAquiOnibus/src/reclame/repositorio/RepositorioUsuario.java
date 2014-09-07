@@ -30,10 +30,6 @@ public class RepositorioUsuario {
 		return (List<Usuario>) dao.criarQuery("FROM usuario WHERE status <> '" + Constants.INATIVO + "'");
 	}
 	
-	public List<Usuario> listarRepresentantes(){
-		return (List<Usuario>) dao.criarQuery("FROM usuario WHERE tipo = '" + TipoUsuario.REPRESENTANTE + "' AND status <> '" + Constants.INATIVO + "'");
-	}
-	
 	public Usuario buscarPorId(long id){
 		List<Usuario> lista = (List<Usuario>) dao.criarQuery("FROM usuario WHERE id = " + id);
 		if(lista != null){
