@@ -2,10 +2,12 @@ package reclame.fachada;
 
 import reclame.cadastro.CadastroEmpresa;
 import reclame.cadastro.CadastroOnibus;
+import reclame.cadastro.CadastroReclamacao;
 import reclame.cadastro.CadastroRota;
 import reclame.cadastro.CadastroUsuario;
 import reclame.repositorio.RepositorioEmpresa;
 import reclame.repositorio.RepositorioOnibus;
+import reclame.repositorio.RepositorioReclamacao;
 import reclame.repositorio.RepositorioRota;
 import reclame.repositorio.RepositorioUsuario;
 
@@ -16,6 +18,7 @@ public class Fachada {
 	private CadastroEmpresa cadEmpresa;
 	private CadastroRota cadRota;
 	private CadastroOnibus cadOnibus;
+	private CadastroReclamacao cadReclamacao;
 	
 	
 	private Fachada(){
@@ -35,6 +38,9 @@ public class Fachada {
 
 		RepositorioOnibus repOnibus = new RepositorioOnibus();
 		cadOnibus = new CadastroOnibus(repOnibus);
+		
+		RepositorioReclamacao repReclamacao = new RepositorioReclamacao();
+		cadReclamacao = new CadastroReclamacao(repReclamacao);
 	}
 	
 	public static Fachada getInstance(){
@@ -59,5 +65,9 @@ public class Fachada {
 	
 	public CadastroOnibus cadastroOnibus(){
 		return cadOnibus;
+	}
+	
+	public CadastroReclamacao cadastroReclamacao(){
+		return cadReclamacao;
 	}
 }

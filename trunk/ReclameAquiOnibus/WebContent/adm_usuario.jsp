@@ -121,7 +121,7 @@
           </div>
           
           <%
-          List<Usuario> representantes = Fachada.getInstance().cadastroUsuario().listarRepresentantes();
+          List<Usuario> representantes = Fachada.getInstance().cadastroUsuario().listar();
           
           %>
           
