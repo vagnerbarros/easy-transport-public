@@ -40,6 +40,16 @@ public class RepositorioEmpresa {
 		} 
 	}
 	
+	public Empresa logar(String email, String senha) {
+		List<Empresa> lista = (List<Empresa>)dao.criarQuery("FROM empresa where email LIKE '"+ email +"' AND senha LIKE '"+ senha +"'  AND status <> '" + Constants.INATIVO + "'");
+		if(!lista.isEmpty()){
+			return lista.get(0);
+		}
+		else{
+			return null;
+		}
+	}
+	
 	public void remover(Empresa del){
 		del.setStatus(Constants.INATIVO);
 		dao.atualizarObjeto(del);
