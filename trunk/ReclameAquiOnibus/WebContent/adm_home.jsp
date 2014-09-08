@@ -29,13 +29,13 @@
         <div class="collapse navbar-collapse navbar-ex1-collapse">
           <ul class="nav navbar-left navbar-nav">
             <li class="active">
-              <a href="adm_home.jsp"><span class="glyphicon glyphicon-star"></span>   InÃ­cio</a>
+              <a href="adm_home.jsp"><span class="glyphicon glyphicon-star"></span>   Início</a>
             </li>
             <li class="">
-              <a href="adm_usuario.jsp"><span class="glyphicon glyphicon-flash"></span>   UsuÃ¡rio</a>
+              <a href="adm_usuario.jsp"><span class="glyphicon glyphicon-flash"></span>   Usuário</a>
             </li>
             <li>
-              <a href="adm_onibus.jsp"><span class="glyphicon glyphicon-road"></span>   Ã”nibus</a>
+              <a href="adm_onibus.jsp"><span class="glyphicon glyphicon-road"></span>   Ônibus</a>
             </li>
             <li>
               <a href="adm_empresa.jsp"><span class="glyphicon glyphicon-tasks">   Empresa</span></a>
@@ -51,7 +51,7 @@
       </div>
     </div>
     <div class="navbar navbar-default navbar-fixed-bottom navbar-inverse">
-      <h4 class="text-center">Â© 2013 - 2014 EasyTrans - Todos os direitos reservados.</h4>
+      <h4 class="text-center">© 2013 - 2014 EasyTrans - Todos os direitos reservados.</h4>
     </div>
   </body>
 
