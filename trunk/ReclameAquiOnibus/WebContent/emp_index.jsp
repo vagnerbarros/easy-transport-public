@@ -29,7 +29,7 @@
         <div class="collapse navbar-collapse navbar-ex1-collapse">
           <ul class="nav navbar-left navbar-nav">
             <li class="active">
-              <a href="Index.jsp">InÃ­cio</a>
+              <a href="Index.jsp">Início</a>
             </li>
             <li>
               <a href="contato.jsp"><span class="glyphicon glyphicon-star"></span>   Contato</a>
@@ -46,7 +46,7 @@
         <div class="col-md-6">
           <div class="alert alert-danger hide  alert-dismissable">
             <button contenteditable="false" type="button" class="close" data-dismiss="alert"
-            aria-hidden="true">Ã—</button>
+            aria-hidden="true">x</button>
             <strong>Erro!</strong>Digite seu e-mail e senha novamente.</div>
           <hr>
           <img src="images\empresa.png" class="center-block img-responsive">
@@ -89,7 +89,7 @@
         </div>
       </div>
       <div class="navbar navbar-default navbar-fixed-bottom navbar-inverse">
-        <h4 class="text-center">ï¿½ 2013 - 2014 EasyTrans - Todos os direitos reservados.</h4>
+        <h4 class="text-center">© 2013 - 2014 EasyTrans - Todos os direitos reservados.</h4>
       </div>
     </div>
   </body>
