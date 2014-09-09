@@ -17,10 +17,13 @@ public class CadastrarUsuario implements Acao{
 		String nome = request.getParameter("nome");
 		String cpf= request.getParameter("cpf");
 		String senha = request.getParameter("senha");
+		String conferirsenha = request.getParameter("confirmarsenha");
 		String sexo  = request.getParameter("sexo");
 		String idade = request.getParameter("idade");
 		String endereco = request.getParameter("endereco");
 		
+		
+		if (senha.equals(conferirsenha)) {
 		Usuario u = new Usuario();
 		u.setEmail(email);
 		u.setNome(nome);
@@ -41,4 +44,6 @@ public class CadastrarUsuario implements Acao{
 		}
 		return pagina;
 	}
+		
+		else return "erro.jsp" ;}
 }

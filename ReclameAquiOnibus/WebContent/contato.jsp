@@ -60,7 +60,7 @@
     </div>
     <div class="container">
       <div class="navbar navbar-default navbar-fixed-bottom navbar-inverse">
-        <h4 class="text-center">Â© 2013 - 2014 EasyTrans - Todos os direitos reservados.</h4>
+        <h4 class="text-center">© 2013 - 2014 EasyTrans - Todos os direitos reservados.</h4>
       </div>
     </div>
   </body>
