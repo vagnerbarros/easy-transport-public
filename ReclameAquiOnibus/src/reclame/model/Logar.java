@@ -19,7 +19,7 @@ public class Logar implements Acao{
 			String pagina = "";
 			if(usuario.getTipo().equals(TipoUsuario.ADMIN)){
 				request.getSession().setAttribute("usuario", usuario);
-				pagina = "/adm_home.jsp";
+				pagina = "/adm_usuario.jsp";
 			}
 			else{
 				request.getSession().setAttribute("usuario", usuario);

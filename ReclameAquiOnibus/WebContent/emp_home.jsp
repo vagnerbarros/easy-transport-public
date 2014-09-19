@@ -35,7 +35,7 @@
               <a href="emp_responder.jsp"><span class="glyphicon glyphicon-file"></span>   Responder reclamação</a>
             </li>
             <li>
-              <a href="sair.jsp"><span class="glyphicon glyphicon-off"> SAIR</span></a>
+              <a href="controlador?acao=logout"><span class="glyphicon glyphicon-off"> SAIR</span></a>
             </li>
           </ul>
         </div>

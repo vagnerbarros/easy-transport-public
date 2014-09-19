@@ -33,9 +33,7 @@
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
           <ul class="nav navbar-left navbar-nav">
-            <li class="">
-              <a href="adm_home.jsp"><span class="glyphicon glyphicon-star"></span>   Início</a>
-            </li>
+           
             <li class="active">
               <a href="adm_usuario.jsp"><span class="glyphicon glyphicon-flash"></span>   Usuário</a>
             </li>
@@ -49,7 +47,7 @@
               <a href="adm_rota.jsp"><span class="glyphicon glyphicon-flag"> Rota</span></a>
             </li>
             <li>
-              <a href="sair.jsp"><span class="glyphicon glyphicon-off"> SAIR</span></a>
+              <a href="controlador?acao=logout"><span class="glyphicon glyphicon-off"> SAIR</span></a>
             </li>
           </ul>
         </div>
@@ -62,7 +60,7 @@
             <a href="#tab1" data-toggle="tab"><span class="glyphicon glyphicon-plus"></span>  Cadastrar</a>
           </li>
           <li>
-            <a href="#tab3" data-toggle="tab"><span class="glyphicon glyphicon-list"></span>   Listar</a>
+            <a href="#tab2" data-toggle="tab"><span class="glyphicon glyphicon-list"></span>   Listar</a>
           </li>
         </ul>
         <div class="tab-content">
@@ -128,7 +126,7 @@
           %>
           
           
-          <div class="tab-pane" id="tab3">
+          <div class="tab-pane" id="tab2">
             <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
             <script src="http://templateplanet.info/tooltip.js"></script>
             <script src="http://templateplanet.info/modal.js"></script>
@@ -144,9 +142,13 @@
                             <input type="button" hidden="true"  >
                            
                           </th>
-                          <th>CPF</th>
                           <th>Nome</th>
                           <th>E-Mail</th>
+                          <th>Senha</th>
+                          <th>CPF</th>
+                          <th>Endereço</th>
+                          <th>Idade</th>
+                          <th>Sexo</th>
                           <th>Editar</th>
                           <th>Remover</th>
                         </tr>
@@ -157,9 +159,13 @@
                           <td>
                            <INPUT TYPE="radio" NAME="OPCAO" VALUE="<%=u.getId()%>" >
                           </td>
-                          <td><%=u.getCpf() %></td>
                           <td><%=u.getNome() %></td>
                           <td><%=u.getEmail() %></td>
+                          <td><%=u.getSenha() %></td>
+                          <td><%=u.getCpf() %></td>
+                          <td><%=u.getEndereco() %></td>
+                          <td><%=u.getIdade() %></td>
+                          <td><%=u.getSexo() %></td>
                           <td>
                             <p>
                               <button class="btn btn-primary btn-xs" data-title="Editar" data-toggle="modal" data-target="#editar" data-placement="top" rel="tooltip" value="<%=u.getId() %>">
@@ -178,30 +184,7 @@
                         <%} %>
                       </tbody>
                     </table>
-                    <div class="clearfix"></div>
-                    <ul class="pagination pull-right">
-                      <li class="disabled">
-                        <a href="#"><span class="glyphicon glyphicon-chevron-left"></span></a>
-                      </li>
-                      <li class="active">
-                        <a href="#">1</a>
-                      </li>
-                      <li>
-                        <a href="#">2</a>
-                      </li>
-                      <li>
-                        <a href="#">3</a>
-                      </li>
-                      <li>
-                        <a href="#">4</a>
-                      </li>
-                      <li>
-                        <a href="#">5</a>
-                      </li>
-                      <li>
-                        <a href="#"><span class="glyphicon glyphicon-chevron-right"></span></a>
-                      </li>
-                    </ul>
+                   
                   </div>
                 </div>
               </div>
@@ -240,35 +223,46 @@
             </div>
             <div class="modal fade" id="deletar" tabindex="-1" role="dialog" aria-labelledby="edit"
             aria-hidden="true">
+            
+            <form action="controlador" method="post">
+            
+             <%   for (Usuario u : representantes) {
+          %>
+            
+            
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
-                    <h4 class="modal-title custom_align" id="Heading">Deletar</h4>
+                    <h4 class="modal-title custom_align" id="Heading">Excluir</h4>
                   </div>
                   <div class="modal-body">
                    <div class="form-group">
-                      Nome<input class="form-control"  type="text" readonly="readonly" value="" >
-                      Cpf<input class="form-control" type="text" readonly="readonly" value="" >
+                      Nome<input class="form-control"  type="text" readonly="readonly" value="<%=u.getNome() %>" >
+                      E-mail<input class="form-control" type="text" readonly="readonly" value="<%=u.getEmail() %>" >
                     </div>
                     <div class="alert alert-warning">
-                      <span class="glyphicon glyphicon-warning-sign"></span>   Tem certeza que deseja deletar ?</div>
+                      <span class="glyphicon glyphicon-warning-sign"></span>   Tem certeza que deseja excluir ?</div>
                   </div>
                   <div class="modal-footer ">
-                    <button type="button" class="btn btn-warning">
+                    <button type="submit" class="btn btn-warning" name="excluir" value="excluir">
                       <span class="glyphicon glyphicon-ok-sign"></span>&nbsp;Sim</button>
-                    <button type="button" class="btn btn-warning">
+                    <button type="button" class="btn btn-warning" data-dismiss="modal" aria-hidden="true"  >
                       <span class="glyphicon glyphicon-remove"></span>&nbsp;Não</button>
                   </div>
                 </div>
                 <!-- /.modal-content -->
-              </div>
+          </form>
+       <%} %>     </div>
               <!-- /.modal-dialog -->
-            </div>
-          </div>
+           </div>
+           </div>
         </div>
         <!-- Only required for left/right tabs -->
-      </div>
+    </div>
+     
+      
+      
     </div>
     <div class="container">
       <div class="row">
@@ -278,7 +272,7 @@
       </div>
     </div>
     <div class="navbar navbar-default navbar-fixed-bottom navbar-inverse">
-      <h4 class="text-center">ï¿½ 2013 - 2014 EasyTrans - Todos os direitos reservados.</h4>
+      <h4 class="text-center">© 2013 - 2014 EasyTrans - Todos os direitos reservados.</h4>
     </div>
   </body>
 
