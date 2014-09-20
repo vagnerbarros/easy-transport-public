@@ -182,10 +182,12 @@
               </div>
             </div>
             <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
-             <form action="controlador" method="post">
             
              <%   for (Empresa emp : empresas) {
           %>
+             <form action="controlador" method="post">
+             	<input type="hidden" name="acao" value="editar_empresa" />
+            	<input type="hidden" name="id" value="<%=emp.getId() %>" />
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
@@ -194,16 +196,16 @@
                   </div>
                   <div class="modal-body">
                     <div class="form-group">                   
-                    Razão Social<input class="form-control " type="text" value="<%= emp.getRazao() %>" >
+                    Razão Social<input class="form-control " type="text" name="razao" value="<%= emp.getRazao() %>" >
                     </div>
                     <div class="form-group">
-                      CNPJ<input class="form-control " type="text" value="<%= emp.getCnpj() %>" >
+                      CNPJ<input class="form-control " type="text" name="cnpj" value="<%= emp.getCnpj() %>" >
                     </div>
                     <div class="form-group">
-                      E-mail<input class="form-control " type="text" value="<%= emp.getEmail()%>" >
+                      E-mail<input class="form-control " type="text" readonly="readonly" value="<%= emp.getEmail()%>" >
                     </div>
                      <div class="form-group">
-                      Senha<input class="form-control " type="text" value="<%= emp.getSenha()%>" >
+                      Senha<input class="form-control " type="text" readonly="readonly" value="<%= emp.getSenha()%>" >
                     </div>
                   </div>
                   <div class="modal-footer ">
@@ -217,10 +219,12 @@
             </div>
             <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
               
-               <form action="controlador" method="post">
             
              <%   for (Empresa emp : empresas) {
           %>
+               <form action="controlador" method="post">
+               <input type="hidden" name="acao" value="deletar_empresa" />
+            	<input type="hidden" name="id" value="<%=emp.getId() %>" />
               
               <div class="modal-dialog">
                 <div class="modal-content">

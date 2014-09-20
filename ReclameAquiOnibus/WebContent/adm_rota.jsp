@@ -166,10 +166,11 @@
             </div>
             <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
             
-             <form action="controlador" method="post">
              <%   for (Rota r : rotas) {
           %>
-            
+             <form action="controlador" method="post">
+				<input type="hidden" name="acao" value="editar_rota" />
+            	<input type="hidden" name="id" value="<%=r.getId() %>" />            
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
@@ -178,10 +179,10 @@
                   </div>
                   <div class="modal-body">
                      <div class="form-group">                   
-                     Nome da Rota<input class="form-control " type="text" value="<%=r.getNome() %>" >
+                     Nome da Rota<input class="form-control " name="nome" type="text" value="<%=r.getNome() %>" >
                     </div>
                     <div class="form-group">
-                      Empresa<input class="form-control " type="text" value="<%= r.getEmpresa().getRazao() %>" >
+                      Empresa<input class="form-control " readonly="readonly" type="text" value="<%= r.getEmpresa().getRazao() %>" >
                     </div>
                     
                   </div>
@@ -196,10 +197,11 @@
             </div>
             <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
             
-             <form action="controlador" method="post">
              <%   for (Rota r : rotas) {
           %>
-            
+             <form action="controlador" method="post">
+            	<input type="hidden" name="acao" value="deletar_rota" />
+            	<input type="hidden" name="id" value="<%=r.getId() %>" />
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">

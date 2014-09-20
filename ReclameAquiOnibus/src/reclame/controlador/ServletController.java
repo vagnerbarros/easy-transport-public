@@ -11,17 +11,22 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import reclame.entidades.Empresa;
 import reclame.model.Acao;
 import reclame.model.CadastrarEmpresa;
 import reclame.model.CadastrarOnibus;
 import reclame.model.CadastrarRepresentante;
 import reclame.model.CadastrarRota;
 import reclame.model.CadastrarUsuario;
+import reclame.model.EditarEmpresa;
+import reclame.model.EditarOnibus;
+import reclame.model.EditarRota;
 import reclame.model.EfetuarReclamacao;
 import reclame.model.Logar;
 import reclame.model.LogarEmpresa;
 import reclame.model.Logout;
+import reclame.model.RemoverEmpresa;
+import reclame.model.RemoverOnibus;
+import reclame.model.RemoverRota;
 
 
 /**
@@ -50,6 +55,12 @@ public class ServletController extends HttpServlet {
 		mapa.put("logout", new Logout());
 		mapa.put("efetuar_reclamacao", new EfetuarReclamacao());
 		mapa.put("logar_empresa", new LogarEmpresa());
+		mapa.put("editar_onibus", new EditarOnibus());
+		mapa.put("deletar_onibus", new RemoverOnibus());
+		mapa.put("editar_empresa", new EditarEmpresa());
+		mapa.put("deletar_empresa", new RemoverEmpresa());
+		mapa.put("editar_rota", new EditarRota());
+		mapa.put("deletar_rota", new RemoverRota());
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -21,6 +21,10 @@ public class CadastroOnibus {
 		rep.inserir(nova);
 	}
 	
+	public Onibus buscarId(int id){
+		return rep.buscarPorId(id);
+	}
+	
 	public void atualizar(Onibus atual){
 		rep.atualizar(atual);
 	}
