@@ -32,6 +32,10 @@ public class RepositorioOnibus {
 		return (List<Onibus>) dao.criarQuery("FROM onibus WHERE status <> '" + Constants.INATIVO + "'");
 	}
 	
+	public List<Onibus> listarOnibusRota(int idRota){
+		return (List<Onibus>) dao.criarQuery("FROM onibus WHERE id_rota = " + idRota + " AND status <> '" + Constants.INATIVO + "'");
+	}
+	
 	public Onibus buscarPorId(long id){
 		List<Onibus> lista = (List<Onibus>) dao.criarQuery("FROM onibus WHERE id = " + id);
 		if(lista != null){

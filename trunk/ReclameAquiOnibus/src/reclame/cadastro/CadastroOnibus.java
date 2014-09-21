@@ -36,4 +36,8 @@ public class CadastroOnibus {
 	public List<Onibus> listar(){
 		return rep.listar();
 	}
+	
+	public List<Onibus> listarOnibusRota(int idRota){
+		return rep.listarOnibusRota(idRota);
+	}
 }

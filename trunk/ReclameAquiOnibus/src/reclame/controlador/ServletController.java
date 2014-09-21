@@ -21,6 +21,7 @@ import reclame.model.EditarEmpresa;
 import reclame.model.EditarOnibus;
 import reclame.model.EditarRota;
 import reclame.model.EfetuarReclamacao;
+import reclame.model.LocalizarOnibus;
 import reclame.model.Logar;
 import reclame.model.LogarEmpresa;
 import reclame.model.Logout;
@@ -61,6 +62,7 @@ public class ServletController extends HttpServlet {
 		mapa.put("deletar_empresa", new RemoverEmpresa());
 		mapa.put("editar_rota", new EditarRota());
 		mapa.put("deletar_rota", new RemoverRota());
+		mapa.put("localizar_onibus", new LocalizarOnibus());
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
