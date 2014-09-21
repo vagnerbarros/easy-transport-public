@@ -22,6 +22,12 @@ public class Onibus {
 	@JoinColumn(name = "id_rota")
 	private Rota rota;
 	
+	@Column(name = "latitude", length = 30, nullable = true)
+	private String latitude;
+	
+	@Column(name = "longitude", length = 30, nullable = true)
+	private String longitude;
+	
 	@Column(name = "status", length = 10, nullable = false)
 	private String status;
 	
@@ -42,6 +48,18 @@ public class Onibus {
 	}
 	public void setRota(Rota rota) {
 		this.rota = rota;
+	}
+	public String getLatitude() {
+		return latitude;
+	}
+	public void setLatitude(String latitude) {
+		this.latitude = latitude;
+	}
+	public String getLongitude() {
+		return longitude;
+	}
+	public void setLongitude(String longitude) {
+		this.longitude = longitude;
 	}
 	public String getStatus() {
 		return status;

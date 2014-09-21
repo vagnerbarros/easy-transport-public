@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<%@page import="reclame.fachada.Fachada"%>
+<%@page import="reclame.entidades.Rota"%>
+<%@page import="reclame.entidades.Empresa"%>
+<%@page import="java.util.List"%>
 <html>
   
   <head>
@@ -70,19 +74,26 @@
         <script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
         <script src="js/infobox.js"></script>
         <script src="js/markerclusterer.js"></script>
+        
+        <%
+        
+        List<Rota> rotas = Fachada.getInstance().cadastroRota().listar();
+        List<Empresa> empresas = Fachada.getInstance().cadastroEmpresa().listar();
+        %>
+        
         <div class="col-md-2 text-left" draggable="true">
-          <form class="form-horizontal">
+          <form action="controlador" method="POST" class="form-horizontal">
+          <input type="hidden" name="acao" value="localizar_onibus" />
             <fieldset>
               <!-- Form Name -->
               <!-- Select Basic -->
               <div class="control-group">
                 <label class="control-label" for="empresa">Selecione a empresa</label>
                 <div class="controls">
-                  <select id="empresa" name="empresa" class="input-xlarge">
-                    <option>Bahia</option>
-                  <option>Capital do Agreste</option>
-                  <option>Tabosa</option>
-                  <option>Coletivo</option>
+                  <select id="empresa" name="id_empresa" class="input-xlarge">
+                  	<%for (Empresa emp : empresas){ %>
+                    <option value="<%=emp.getId() %>"><%=emp.getRazao() %></option>
+                    <%} %>
                   </select>
                 </div>
               </div>
@@ -90,11 +101,10 @@
               <div class="control-group">
                 <label class="control-label" for="linha">Selecione a linha</label>
                 <div class="controls">
-                  <select id="linha" name="linha" class="input-xlarge">
-                    <option>Fafica -Via Pitombeira</option>
-				  <option>Bairro Agamenon</option>
-                  <option>Boa Vista I</option>
-                  <option>Bairro Universitário</option>
+                  <select id="linha" name="id_rota" class="input-xlarge">
+                    <% for(Rota r : rotas){ %>
+                    <option value="<%=r.getId() %>" ><%=r.getNome() + " - " + r.getEmpresa().getRazao() %></option>
+                    <% } %>
                   </select>
                 </div>
               </div>
