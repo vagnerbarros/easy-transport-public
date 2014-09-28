@@ -34,7 +34,7 @@
         <div class="collapse navbar-collapse navbar-ex1-collapse">
           <ul class="nav navbar-left navbar-nav">
             <li>
-              <a href="home.jsp"><span class="glyphicon glyphicon-star"></span>   InÃ­cio</a>
+              <a href="home.jsp"><span class="glyphicon glyphicon-star"></span>   Início</a>
             </li>
             <li class="active">
               <a href="reclamacao.jsp"><span class="glyphicon glyphicon-flash"></span>   Efetuar uma reclamação</a>
@@ -122,7 +122,7 @@
       </div>
     </div>
     <div class="navbar navbar-default navbar-fixed-bottom navbar-inverse">
-      <h4 class="text-center">Â© 2013 - 2014 EasyTrans - Todos os direitos reservados.</h4>
+      <h4 class="text-center">© 2013 - 2014 EasyTrans - Todos os direitos reservados.</h4>
     </div>
   </body>
 

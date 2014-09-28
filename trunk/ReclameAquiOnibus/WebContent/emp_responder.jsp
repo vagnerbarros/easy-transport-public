@@ -32,16 +32,12 @@
       </style>
       <div class="container">
         <div class="navbar-header">
-          <a type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"></a>
-          <span class="sr-only">Toggle navigation</span>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
           <ul class="nav navbar-left navbar-nav">
-            <li>
-              <a href="emp_home.jsp"><span class="glyphicon glyphicon-star"></span>   InÃ­cio</a>
-            </li>
+           
             <li class="">
-              <a href="emp_responder.jsp"><span class="glyphicon glyphicon-file"></span>   Responder reclamaÃ§Ã£o</a>
+              <a href="emp_responder.jsp"><span class="glyphicon glyphicon-file"></span>   Responder reclamação</a>
             </li>
             <li>
               <a href="controlador?acao=logout"><span class="glyphicon glyphicon-off"> SAIR</span></a>
@@ -66,190 +62,78 @@
               <thead>
                 <tr>
                   <th>
-                    <input type="checkbox" id="checkall">
+                     <input type="button" hidden="true"  >
                   </th>
                   <th>Nome do Usuário</th>
                   <th>Rota</th>
                   <th>Reclamação</th>
                   <th>Responder</th>
-                  <th>Pendente</th>
+                 
                 </tr>
               </thead>
               <tbody>
               	<% for (Reclamacao rec : reclamacoes){ %>
                 <tr>
                   <td>
-                    <input type="checkbox" class="checkthis">
+                    <INPUT TYPE="radio" NAME="OPCAO" VALUE="<%=rec.getId()%>" >
                   </td>
                   <td><%=rec.getUsuario().getNome() %></td>
                   <td><%=rec.getLinha().getNome() %></td>
                   <td><%=rec.getDescricao_reclamacao() %></td>
                   <td>
                     <p>
-                      <button class="btn btn-success btn-xs" data-title="responder" data-toggle="modal"
-                      data-target="#responder" data-placement="top" rel="tooltip">
-                        <span class="glyphicon glyphicon-pencil"></span>
-                      </button>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <button class="btn btn-primary btn-xs" data-title="Responder" data-toggle="modal" data-target="#responder" data-placement="top" rel="tooltip" value="<%=rec.getId() %>">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                              </button>
                     </p>
                   </td>
-                  <td>
-                    <p>
-                      <button class="btn btn-warning btn-xs" data-title="pendente" data-toggle="modal"
-                      data-target="#pendente" data-placement="top" rel="tooltip">
-                        <span class="glyphicon glyphicon-trash"></span>
-                      </button>
-                    </p>
-                  </td>
+                  
                 </tr>
                 <% } %>
               </tbody>
             </table>
             <div class="clearfix"></div>
-            <ul class="pagination pull-right">
-              <li class="disabled">
-                <a href="#"><span class="glyphicon glyphicon-chevron-left"></span></a>
-              </li>
-              <li class="active">
-                <a href="#">1</a>
-              </li>
-              <li>
-                <a href="#">2</a>
-              </li>
-              <li>
-                <a href="#">3</a>
-              </li>
-              <li>
-                <a href="#">4</a>
-              </li>
-              <li>
-                <a href="#">5</a>
-              </li>
-              <li>
-                <a href="#"><span class="glyphicon glyphicon-chevron-right"></span></a>
-              </li>
-            </ul>
           </div>
         </div>
       </div>
     </div>
-    <div class="modal fade" id="responder" tabindex="-1" role="dialog" aria-labelledby="responder"
-    aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">Ã—</button>
-            <h4 class="modal-title custom_align" id="Heading">Responder reclamaÃ§Ã£o</h4>
-          </div>
-          <div class="modal-body">
-            <div class="form-group" draggable="false">
-              <h5>Nome do usuÃ¡rio</h5>
-              <input class="form-control " enable="true" type="text"
-              placeholder="Mohsin">
+  <div class="modal fade" id="responder" tabindex="-1" role="dialog" aria-labelledby="responder" aria-hidden="true">
+           <form action="controlador" method="post">
+            <% for (Reclamacao rec : reclamacoes) { %>
+           
+       <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                    <h4 class="modal-title custom_align" id="Heading">Responder reclamação</h4>
+                  </div>
+                  <div class="modal-body">
+                    <div class="form-group">                   
+                     Nome do usuário<input class="form-control " readonly="readonly" type="text" value="<%= rec.getUsuario().getNome() %>" >
+                    </div>
+                    <div class="form-group">
+                      Reclamação<input class="form-control " readonly="readonly" type="text" value="<%= rec.getDescricao_reclamacao() %>" >
+                    </div>
+                    <div class="form-group">
+                      Resposta<input class="form-control " type="text" value="" >
+                    </div>
+                 
+                  </div>
+         <div class="modal-footer ">
+                    <button type="submit" value="responder" class="btn btn-success" style="width: 100%;">
+                      <span class="glyphicon glyphicon-ok-sign"></span>&nbsp;Responder</button>
+                  </div>
+                </div>
+                <!-- /.modal-content -->
+              </div>
+             </form> <!-- /.modal-dialog -->
+                  <%} %>
             </div>
-            <div class="form-group">
-              <h5>Ã”nibus</h5>
-              <input class="form-control " enable="false" type="text" placeholder="Irshad">
-            </div>
-            <div class="form-group" draggable="true">
-              <h5>Rota</h5>
-              <input class="form-control " enable="false" type="text" placeholder="Irshad">
-            </div>
-            <div class="form-group" draggable="true">
-              <h5>ReclamaÃ§Ã£o</h5>
-              <textarea rows="2" enable="false" class="form-control"
-              placeholder="bla bla bal bla bla"></textarea>
-            </div>
-            <div class="form-group" draggable="true">
-              <h5 class="text-success">Resposta da empresa</h5>
-              <textarea rows="2" class="form-control" placeholder="Responda a reclamaÃ§Ã£o aqui"></textarea>
-            </div>
-          </div>
-          <div class="modal-footer ">
-            <button type="button" class="btn btn-lg btn-success" style="width: 100%;">
-              <span class="glyphicon glyphicon-ok-sign">Responder</span>
-            </button>
-          </div>
-        </div>
-        <!-- /.modal-content -->
-      </div>
-      <!-- /.modal-dialog -->
-    </div>
-    <div class="modal fade" id="pendente" tabindex="-1" role="dialog" aria-labelledby="pendente"
-    aria-hidden="true" draggable="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">Ã—</button>
-            <h4 class="modal-title custom_align" id="Heading">ReclamaÃ§Ãµes pendentes</h4>
-          </div>
-          <div class="modal-body">
-            <div class="alert alert-warning">
-              <span class="glyphicon glyphicon-warning-sign"></span>Tem certeza que deseja colocar essa reclamaÃ§Ã£o em pendÃªncia ?</div>
-          </div>
-          <div class="modal-footer ">
-            <button type="button" class="btn btn-warning">
-              <span class="glyphicon glyphicon-ok-sign"></span>&nbsp;Yes</button>
-            <button type="button" class="btn btn-warning">
-              <span class="glyphicon glyphicon-remove"></span>&nbsp;No</button>
-          </div>
-        </div>
-        <!-- /.modal-content -->
-      </div>
-      <!-- /.modal-dialog -->
-    </div>
-    <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="edit"
-    aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">Ã—</button>
-            <h4 class="modal-title custom_align" id="Heading">Edit Your Detail</h4>
-          </div>
-          <div class="modal-body">
-            <div class="form-group">
-              <input class="form-control " type="text" placeholder="Mohsin">
-            </div>
-            <div class="form-group">
-              <input class="form-control " type="text" placeholder="Irshad">
-            </div>
-            <div class="form-group">
-              <textarea rows="2" class="form-control" placeholder="CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan"></textarea>
-            </div>
-          </div>
-          <div class="modal-footer ">
-            <button type="button" class="btn btn-warning btn-lg" style="width: 100%;">
-              <span class="glyphicon glyphicon-ok-sign"></span>&nbsp;Update</button>
-          </div>
-        </div>
-        <!-- /.modal-content -->
-      </div>
-      <!-- /.modal-dialog -->
-    </div>
-    <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="edit"
-    aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">Ã—</button>
-            <h4 class="modal-title custom_align" id="Heading">Delete this entry</h4>
-          </div>
-          <div class="modal-body">
-            <div class="alert alert-warning">
-              <span class="glyphicon glyphicon-warning-sign"></span>Are you sure you want to delete this Record?</div>
-          </div>
-          <div class="modal-footer ">
-            <button type="button" class="btn btn-warning">
-              <span class="glyphicon glyphicon-ok-sign"></span>&nbsp;Yes</button>
-            <button type="button" class="btn btn-warning">
-              <span class="glyphicon glyphicon-remove"></span>&nbsp;No</button>
-          </div>
-        </div>
-        <!-- /.modal-content -->
-      </div>
-      <!-- /.modal-dialog -->
-    </div>
+    
+    
+    
     <div class="navbar navbar-default navbar-fixed-bottom navbar-inverse">
-      <h4 class="text-center">Â© 2013 - 2014 EasyTrans - Todos os direitos reservados.</h4>
+      <h4 class="text-center">© 2013 - 2014 EasyTrans - Todos os direitos reservados.</h4>
     </div>
   </body>
 

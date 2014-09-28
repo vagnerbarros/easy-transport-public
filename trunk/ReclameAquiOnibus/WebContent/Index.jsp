@@ -55,7 +55,7 @@
         <div class="col-md-6 text-center" draggable="true">
           <div class="alert alert-danger hide  alert-dismissable">
             <button contenteditable="false" type="button" class="close" data-dismiss="alert"
-            aria-hidden="true">Ã—</button>
+            aria-hidden="true">x—</button>
             <strong>Erro!</strong>Digite seu e-mail e senha novamente.</div>
           <hr>
           <form class="form-horizontal text-left" role="form" action="controlador"
