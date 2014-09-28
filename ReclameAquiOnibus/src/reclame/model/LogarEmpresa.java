@@ -18,7 +18,7 @@ public class LogarEmpresa implements Acao{
 		if(empresa != null){
 			request.getSession().setAttribute("empresa_logada", empresa);
 				
-			return "/emp_home.jsp";
+			return "/emp_responder.jsp";
 		}else{
 			return "/emp_index.jsp";
 		}
