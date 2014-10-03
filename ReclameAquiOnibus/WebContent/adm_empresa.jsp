@@ -6,7 +6,14 @@
   
   <head>
     <meta charset="utf-8">
-    <title>Bootstrap, from Twitter</title>
+    
+    <script src="jquery.js" type="text/javascript"></script>
+    <script src="jquery.maskedinput.js" type="text/javascript"></script>
+    
+    <script type="text/javascript">
+    function sucesso() { alert("Empresa cadastrada com sucesso !");}
+    </script>
+    <title>Reclame Aqui do Seu Ônibus</title>   
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -18,6 +25,7 @@
   
   <body class="visible-lg visible-md visible-sm visible-xs">
     <div class="navbar navbar-default navbar-static-top navbar-inverse">
+ 
       <style>
         .body{padding-top:70px}
       </style>
@@ -33,19 +41,19 @@
           <ul class="nav navbar-left navbar-nav">
             
             <li >
-              <a href="adm_usuario.jsp"><span class="glyphicon glyphicon-flash"></span>   Usuário</a>
+              <a href="adm_usuario.jsp"><span class="glyphicon glyphicon-user"></span>   Usuário</a>
             </li>
             <li>
               <a href="adm_onibus.jsp"><span class="glyphicon glyphicon-road"></span>   Ônibus</a>
             </li>
-            <li class="active">
+            <li>
               <a href="adm_empresa.jsp"><span class="glyphicon glyphicon-tasks">   Empresa</span></a>
             </li>
             <li>
               <a href="adm_rota.jsp"><span class="glyphicon glyphicon-flag"> Rota</span></a>
             </li>
             <li>
-              <a href="controlador?acao=logout"><span class="glyphicon glyphicon-off"> SAIR</span></a>
+              <a href="controlador?acao=logout"><span class="glyphicon glyphicon-off"> Sair</span></a>
             </li>
           </ul>
         </div>
@@ -65,8 +73,9 @@
           <div class="tab-pane active" id="tab1">
             <p draggable="true"></p>
             <hr>
-            <form action="controlador" method="POST" class="form-horizontal">
-            	<input type="hidden" name="acao" value="cadastrar_empresa" />
+            <form class="form-horizontal" action="controlador" method="POST"  onabort="" onsubmit="sucesso();">
+            	<input type="hidden" name="acao"  value="cadastrar_empresa" />
+      
               <fieldset>
                 <div class="form-group">
                   <label class="col-md-4 control-label" for="nome">Razão Social:</label>
@@ -78,28 +87,28 @@
                 <div class="form-group">
                   <label class="col-md-4 control-label" for="senha">CNPJ:</label>
                   <div class="col-md-6">
-                    <input id="senha" name="cnpj" type="text" placeholder="Digite o CNPJ da empresa"
+                    <input id="cnpj" name="cnpj" type="number" placeholder="Digite o CNPJ da empresa"
                     class="form-control input-md" required="">
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="col-md-4 control-label" for="repetirsenha">E-mail:</label>
                   <div class="col-md-6">
-                    <input id="repetirsenha" name="email" type="email" placeholder="Digite o e-mail da empresa"
+                    <input id="email" name="email" type="email" placeholder="Digite o e-mail da empresa"
                     class="form-control input-md" required="">
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="col-md-4 control-label" for="email">Senha:</label>
                   <div class="col-md-6">
-                    <input id="email" name="senha" type="password" placeholder="Digite a senha da empresa"
+                    <input id="senha" name="senha" type="password" placeholder="Digite a senha da empresa"
                     class="form-control input-md" required="">
                   </div>
                 </div>
                 <div class="form-group">
                   <label class="col-md-4 control-label" for="email">Repita a senha:</label>
                   <div class="col-md-6">
-                    <input id="email" name="resenha" type="password" placeholder="Repita a senha da empresa"
+                    <input id="confirmarsenha" name="resenha" type="password" placeholder="Repita a senha da empresa"
                     class="form-control input-md" required="">
                   </div>
                 </div>
@@ -112,10 +121,9 @@
                     <button id="cadastrar" name="cadastrar" class="btn btn-success">Cadastrar</button>
                   </div>
                 </div>
-                <!-- Password input-->
-                <!-- Password input-->
-                <!-- Text input-->
-                <!-- Button (Double) -->
+             
+
+
               </fieldset>
             </form>
           </div>

@@ -1,4 +1,7 @@
+
 <!DOCTYPE html>
+
+
 <html>
   
   <head>
@@ -9,18 +12,21 @@
     var senha1 =	document.getElementById("senha").value;
 	var senha2 = document.getElementById("confirmarsenha").value;
 	if (senha1 != senha2){ alert("As senha não são iguais!\nRedigite! ");} 
-	 
-	}
     </script>
-    <title>Bootstrap, from Twitter</title>
+	<script > language="JavaScript" type="text/javascript" src="MascaraValidacao.js"></script>
+	
+
+    <title>Reclame Aqui do Seu Ônibus</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"
     rel="stylesheet">
     <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+      <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  
   </head>
+  
   
   <body class="visible-lg visible-md visible-sm visible-xs">
     <div class="navbar navbar-default navbar-static-top navbar-inverse">
@@ -121,8 +127,6 @@
           <div class="modal-body">
            <form class="form-horizontal" action="controlador" method="POST"  onabort="" onsubmit="sucesso();">
               <fieldset>
-                <!-- Form Name -->
-                <!-- Text input-->
                 <div class="form-group">
                   <label class="col-md-4 control-label" for="nome">Nome:</label>
                   <div class="col-md-6">
@@ -134,7 +138,8 @@
                 <div class="form-group">
                   <label class="col-md-4 control-label" for="cpf">CPF:</label>
                   <div class="col-md-6">
-                    <input id="cpf" name="cpf" type="number" placeholder="Digite seu cpf"
+                  
+                   <input id="cpf" name="cpf" type="text" data-mask="999.999.999-99" placeholder="Digite seu cpf"
                     class="form-control input-md" required="required">
                   </div>
                 </div>

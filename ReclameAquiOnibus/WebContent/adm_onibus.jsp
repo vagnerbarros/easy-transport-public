@@ -7,7 +7,10 @@
   
   <head>
     <meta charset="utf-8">
-    <title>Bootstrap, from Twitter</title>
+    <script type="text/javascript">
+    function sucesso() { alert("Ônibus cadastrado com sucesso !");}
+    </script>
+    <title>Reclame Aqui do Seu Ônibus</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -32,10 +35,10 @@
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
           <ul class="nav navbar-left navbar-nav">
-            <li class="">
-              <a href="adm_usuario.jsp"><span class="glyphicon glyphicon-flash"></span>   Usuário</a>
+          <li >
+              <a href="adm_usuario.jsp"><span class="glyphicon glyphicon-user"></span>   Usuário</a>
             </li>
-            <li class="active">
+            <li>
               <a href="adm_onibus.jsp"><span class="glyphicon glyphicon-road"></span>   Ônibus</a>
             </li>
             <li>
@@ -45,7 +48,7 @@
               <a href="adm_rota.jsp"><span class="glyphicon glyphicon-flag"> Rota</span></a>
             </li>
             <li>
-              <a href="controlador?acao=logout"><span class="glyphicon glyphicon-off"> SAIR</span></a>
+              <a href="controlador?acao=logout"><span class="glyphicon glyphicon-off"> Sair</span></a>
             </li>
           </ul>
         </div>
@@ -70,7 +73,7 @@
           <div class="tab-pane active" id="tab1">
             <p draggable="true"></p>
             <hr>
-            <form class="form-horizontal" method="POST" action="controlador">
+            <form class="form-horizontal" action="controlador" method="POST"  onabort="" onsubmit="sucesso();">
             	<input type="hidden" name="acao" value="cadastrar_onibus" >
               <fieldset>
                 <!-- Form Name -->

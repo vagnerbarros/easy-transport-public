@@ -8,7 +8,10 @@
   
   <head>
     <meta charset="utf-8">
-    <title>Bootstrap, from Twitter</title>
+    <script type="text/javascript">
+    function sucesso() { alert("Reclamação cadastrada com sucesso.");}
+    </script>
+    <title>Reclame Aqui do Seu Ônibus</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -60,7 +63,7 @@
     
     <div class="container">
       <div class="row">
-        <form action="controlador" method="POST" class="form-horizontal">
+         <form class="form-horizontal" action="controlador" method="POST"  onabort="" onsubmit="sucesso();">
         	<input type="hidden" name="acao" value="efetuar_reclamacao" />
         	<input type="hidden" name="usuario" value="<%=usuario.getId() %>" />
           <fieldset>
@@ -92,7 +95,7 @@
             <div class="control-group">
               <label class="control-label" for="hora">Horário:</label>
               <div class="controls">
-                <input id="hora" name="hora" class="input-xlarge">
+                <input id="hora" name="hora" type ="number" "input-xlarge">
               </div>
             </div>
             <!-- Textarea -->

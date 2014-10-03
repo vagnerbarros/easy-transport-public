@@ -129,7 +129,7 @@
                 <div class="col-md-8">
                   <a class="btn btn-danger" href="Index.jsp">Cancelar</a>
                   <button id="cadastrar" name="cadastrar" class="btn btn-success">Cadastrar</button>
-				<br> <br> * - Campos Obrigat√≥rios
+				<br> <br> * - Campos Obrigat·rios
                 </div>
               </div>
             </fieldset>
