@@ -29,8 +29,8 @@ public class LocalizarOnibus implements Acao {
 			
 			//Alterar o caminho para a pasta do projeto do computador local. 
 			// substituir C:\\Users\\Vagner\\Documents\\ProjetosEclipse pelo caminho do projeto de vcs.
-   
-			File statText = new File("C:\\Users\\Vagner\\Documents\\ProjetosEclipse\\ReclameAquiOnibus\\WebContent\\js\\pontos.json");
+		
+			File statText = new File("C:\\Users\\Vanessa\\Documents\\ProjetosEclipse2\\ReclameAquiOnibus\\WebContent\\js\\pontos.json");
     		String teste = statText.getAbsolutePath();
 	        FileOutputStream is = new FileOutputStream(statText);
 	        OutputStreamWriter osw = new OutputStreamWriter(is);    

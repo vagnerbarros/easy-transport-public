@@ -7,7 +7,7 @@
   
   <head>
     <meta charset="utf-8">
-    <title>Bootstrap, from Twitter</title>
+    <title>Reclame Aqui do Seu Ônibus</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -33,19 +33,19 @@
         <div class="collapse navbar-collapse navbar-ex1-collapse">
           <ul class="nav navbar-left navbar-nav">
             <li>
-              <a href="home.jsp"><span class="glyphicon glyphicon-star"></span>   InÃ­cio</a>
+              <a href="home.jsp"><span class="glyphicon glyphicon-star"></span>   Início</a>
             </li>
             <li>
-              <a href="reclamacao.jsp"><span class="glyphicon glyphicon-flash"></span>   Efetuar uma reclamaÃ§Ã£o</a>
+              <a href="reclamacao.jsp"><span class="glyphicon glyphicon-flash"></span>   Efetuar uma reclamação</a>
             </li>
             <li class="active">
-              <a href="LocalOnibus.jsp"><span class="glyphicon glyphicon-flag"></span>   Veja onde estÃ¡ seu Ã´nibus</a>
+              <a href="LocalOnibus.jsp"><span class="glyphicon glyphicon-flag"></span>   Veja onde está seu Ônibus</a>
             </li>
             <li>
-              <a href="feed.jsp"><span class="glyphicon glyphicon-tasks">   Feed de reclamaÃ§Ãµes</span></a>
+              <a href="feed.jsp"><span class="glyphicon glyphicon-tasks">   Feed de reclamações</span></a>
             </li>
             <li>
-              <a href="controlador?acao=logout"><span class="glyphicon glyphicon-off"> SAIR</span></a>
+              <a href="controlador?acao=logout"><span class="glyphicon glyphicon-off"> Sair</span></a>
             </li>
           </ul>
         </div>

@@ -1,16 +1,8 @@
-[ { "Id": 1
+[ { "Id": 6
+, "Latitude": -8.3011548
+, "Longitude": -35.9737042
+, "Descricao": " Onibus: 12 - Fafica" } ,
+ { "Id": 8
 , "Latitude": -8.298936
 , "Longitude": -35.974305
-, "Descricao": " Onibus: 1 - CENTRO" } ,
- { "Id": 3
-, "Latitude": -8.278772
-, "Longitude": -35.972921
-, "Descricao": " Onibus: 22 - CENTRO" } ,
- { "Id": 4
-, "Latitude": -8.287287
-, "Longitude": -35.973473
-, "Descricao": " Onibus: 34 - CENTRO" } ,
- { "Id": 5
-, "Latitude": -8.2934275
-, "Longitude": -35.969238
-, "Descricao": " Onibus: 50 - CENTRO" }]
+, "Descricao": " Onibus: 456 - Fafica" }]

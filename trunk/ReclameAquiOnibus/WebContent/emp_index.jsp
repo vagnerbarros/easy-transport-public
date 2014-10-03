@@ -3,7 +3,7 @@
   
   <head>
     <meta charset="utf-8">
-    <title>Bootstrap, from Twitter</title>
+    <title>Reclame Aqui do Seu Ônibus</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -64,7 +64,7 @@
             </div>
             <div class="form-group has-success">
               <div class="col-sm-2">
-                <label for="inputPassword3" class="control-label">Password</label>
+                <label for="inputPassword3" class="control-label">Senha</label>
               </div>
               <div class="col-sm-10">
                 <input type="password" class="form-control" required="required" name="senha"

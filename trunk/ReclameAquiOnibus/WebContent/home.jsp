@@ -3,7 +3,7 @@
   
   <head>
     <meta charset="utf-8">
-    <title>Bootstrap, from Twitter</title>
+    <title>Reclame Aqui do Seu ‘nibus</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -29,19 +29,19 @@
         <div class="collapse navbar-collapse navbar-ex1-collapse">
           <ul class="nav navbar-left navbar-nav">
             <li class="active">
-              <a href="home.jsp"><span class="glyphicon glyphicon-star"></span>   In√≠cio</a>
+              <a href="home.jsp"><span class="glyphicon glyphicon-star"></span>   Inicio</a>
             </li>
             <li>
-              <a href="reclamacao.jsp"><span class="glyphicon glyphicon-flash"></span>   Efetuar uma reclama√ß√£o</a>
+              <a href="reclamacao.jsp"><span class="glyphicon glyphicon-flash"></span>   Efetuar uma reclamaÁ„o</a>
             </li>
             <li>
-              <a href="LocalOnibus.jsp"><span class="glyphicon glyphicon-flag"></span>   Veja onde est√° seu √¥nibus</a>
+              <a href="LocalOnibus.jsp"><span class="glyphicon glyphicon-flag"></span>   Veja onde est· seu ‘nibus</a>
             </li>
             <li>
-              <a href="feed.jsp"><span class="glyphicon glyphicon-tasks">   Feed de reclama√ß√µes</span></a>
+              <a href="feed.jsp"><span class="glyphicon glyphicon-tasks">   Feed de reclamaÁıes</span></a>
             </li>
             <li>
-              <a href="controlador?acao=logout"><span class="glyphicon glyphicon-off"> SAIR</span></a>
+              <a href="controlador?acao=logout"><span class="glyphicon glyphicon-off"> Sair</span></a>
             </li>
           </ul>
         </div>
@@ -49,25 +49,25 @@
     </div>
     <div class="container">
       <div class="row text-left" bg="">
-        <h3 draggable="true">Clique aqui para efetuar uma reclama√ß√£o.</h3>
+        <h3 draggable="true">Clique aqui para efetuar uma reclamaÁ„o.</h3>
         <a href="reclamacao.jsp"
-        class="btn btn-lg btn-primary"><span class="glyphicon glyphicon-hand-right"></span>  Efetuar uma reclama√ß√£o</a>
+        class="btn btn-lg btn-primary"><span class="glyphicon glyphicon-hand-right"></span>  Efetuar uma reclamaÁ„o</a>
       </div>
       <br>
       <br>
       <br>
       <div class="row text-center" draggable="true">
-        <h3>Clique aqui para ver onde est√° seu √¥nibus.</h3>
+        <h3>Clique aqui para ver onde est· seu ‘nibus.</h3>
         <a href="LocalOnibus.jsp"
-        class="btn btn-lg btn-primary" draggable="true"><span class="glyphicon glyphicon-hand-right"></span>  Veja onde est√° seu √¥nibus</a>
+        class="btn btn-lg btn-primary" draggable="true"><span class="glyphicon glyphicon-hand-right"></span>  Veja onde est· seu ‘nibus</a>
       </div>
       <br>
       <br>
       <br>
       <br>
       <div class="row text-right" draggable="true">
-        <h3>Clique aqui para efetuar uma reclama√ß√£o !</h3>
-        <a href="feed.jsp" class="btn btn-lg btn-primary"><span class="glyphicon glyphicon-hand-right"></span> Feed de  reclama√ß√µes </a>
+        <h3>Clique aqui para efetuar uma reclamaÁ„o !</h3>
+        <a href="feed.jsp" class="btn btn-lg btn-primary"><span class="glyphicon glyphicon-hand-right"></span> Feed de  reclamaÁıes </a>
       </div>
       <br>
       <br>
